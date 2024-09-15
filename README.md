@@ -1,24 +1,20 @@
-# README
+# FRC 461 Website 2024
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
 
-Things you may want to cover:
+* Ruby 3.3.1
 
-* Ruby version
+* Rails 7.1.4
 
-* System dependencies
+* Relatively new version of node (yarn)
 
-* Configuration
+* Docker-compose
 
-* Database creation
+## Running the Project
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+yarn install
+bundle install
+docker-compose up
+bin/dev
+```
