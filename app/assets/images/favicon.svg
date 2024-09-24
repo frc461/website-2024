@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="4in"
+   height="4in"
+   viewBox="0 0 101.6 101.6"
+   version="1.1"
+   id="svg1660"
+   inkscape:version="1.0 (1.0+r73+1)"
+   sodipodi:docname="WBI-mark.svg"
+   inkscape:export-filename="/home/brad/branding-assets/WBI-Mark.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <defs
+     id="defs1654" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="203.82534"
+     inkscape:cy="184.80493"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="in"
+     showguides="false"
+     inkscape:snap-page="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="1920"
+     inkscape:window-y="627"
+     inkscape:window-maximized="1"
+     inkscape:document-rotation="0" />
+  <metadata
+     id="metadata1657">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-195.39999)">
+    <g
+       transform="translate(-0.1120913,-3.412705)"
+       id="g849">
+      <path
+         id="path841"
+         d="m 37.232596,218.02187 -13.680066,7.8977 -13.6789954,7.89772 v 15.79539 15.79542 l 13.6789954,7.8977 13.680066,7.89769 13.678995,-7.89769 13.680066,-7.8977 -13.680066,-7.8977 -13.678995,-7.89772 v -15.79539 z"
+         style="opacity:1;fill:#cc3333;fill-opacity:1;stroke:none;stroke-width:0.500063;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         id="path843"
+         d="m 64.591657,202.2254 -13.678996,7.89877 -13.680065,7.8977 v 15.79542 15.79539 l 13.678995,-7.89769 13.680066,-7.8977 13.678993,7.8977 13.678996,7.89769 0.0011,-15.79539 -0.0011,-15.79542 -13.678996,-7.89877 z"
+         style="opacity:1;fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:0.500063;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         id="path851"
+         d="m 64.591657,233.81729 v 15.79539 15.79542 l -13.680066,7.8977 -13.678995,7.89769 13.678995,7.89878 13.680066,7.89772 13.678993,-7.89772 13.678996,-7.8977 v -15.79539 -15.7965 L 78.27065,241.71499 Z"
+         style="opacity:1;fill:#96a1a8;fill-opacity:1;stroke:none;stroke-width:0.500063;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path901"
+         d="M 64.591414,202.22585 9.8734366,233.81727 v 31.59116 l 54.7179774,31.59141 27.358709,-15.79558 v -63.18284 z"
+         style="fill:none;stroke:none;stroke-width:0.264582px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <text
+       transform="rotate(-30)"
+       id="text855"
+       y="230.25687"
+       x="-73.689476"
+       style="font-size:12.7px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583;fill:#947600;fill-opacity:1;"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:12.7px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Ultra-Bold';stroke-width:0.264583;fill:#947600;fill-opacity:1;"
+         y="230.25687"
+         x="-73.689476"
+         id="tspan853"
+         sodipodi:role="line">FRC</tspan></text>
+    <text
+       transform="rotate(90)"
+       xml:space="preserve"
+       style="font-size:12.7px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583;fill:#434c51;fill-opacity:1;"
+       x="247.17062"
+       y="-65.683456"
+       id="text859"><tspan
+         sodipodi:role="line"
+         id="tspan857"
+         x="247.17062"
+         y="-65.683456"
+         style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:12.7px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Ultra-Bold';stroke-width:0.264583;fill:#434c51;fill-opacity:1;">461</tspan></text>
+    <text
+       transform="rotate(-150)"
+       id="text863"
+       y="-195.88033"
+       x="-167.34344"
+       style="font-size:12.7px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583;fill:#771e1e;fill-opacity:1;"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:12.7px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Ultra-Bold';stroke-width:0.264583;fill:#771e1e;fill-opacity:1;"
+         y="-195.88033"
+         x="-167.34344"
+         id="tspan861"
+         sodipodi:role="line">WBI</tspan></text>
+  </g>
+</svg>
