@@ -2,6 +2,7 @@
   "name": "app",
   "private": "true",
   "dependencies": {
+    "@editorjs/editorjs": "^2.30.6",
     "@popperjs/core": "^2.11.8",
     "autoprefixer": "^10.4.20",
     "bootstrap": "^5.3.3",
