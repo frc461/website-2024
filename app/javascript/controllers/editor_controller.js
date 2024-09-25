@@ -19,7 +19,6 @@ export default class extends Controller {
   connect() {
     this.content_field = document.getElementById("content_hidden")
     this.editor = new EditorJS({
-
       holder: this.contentTarget,
       data: this.getInitalContent(),
       tools: {
