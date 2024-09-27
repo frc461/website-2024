@@ -7,6 +7,5 @@ module ApplicationHelper
       block_as_html block
     end
     html.join.html_safe
-    # json_data
   end
 end

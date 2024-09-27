@@ -10,8 +10,11 @@ module EditorJsHelper
     when 'list'
       list_html data
     when 'quote'
+      quote_html data
     when 'delimiter'
+      '<div class="ce-delimiter cdx-block"></div>'
     when 'table'
+      table_html data
     when 'alert'
       alert_html data
     else
@@ -37,15 +40,40 @@ module EditorJsHelper
     end.join
   end
 
+  def table_html(data)
+    table = data['content'].map do |item|
+      inner = item.map do |i|
+        "<td>#{i}</td>"
+      end.join
+      "<tbody>#{inner}</tbody>"
+    end.join
+    "<table class=\"table table-bordered\">#{table}</table>"
+  end
+
+  def quote_html(data)
+    alignment = get_alignment_class data['alignment']
+    "<figure class=\"text-#{alignment}\">
+       <blockquote class=\"blockquote\">
+          <p>#{data['text']}</p>
+       </blockquote>
+       <figcaption class=\"blockquote-footer\">
+         #{data['caption']}
+       </figcaption>
+     </figure>"
+  end
+
   def alert_html(data)
-    alignment = case data['align']
-                when 'left'
-                  'start'
-                when 'right'
-                  'end'
-                else
-                  data['align']
-                end
+    alignment = get_alignment_class data['align']
     "<div class=\"alert alert-#{data['type']} text-#{alignment}\">#{data['message']}</div>"
+  end
+
+  def get_alignment_class(align)
+    if align == 'left'
+      'start'
+    elsif align == 'right'
+      'end'
+    else
+      align
+    end
   end
 end
