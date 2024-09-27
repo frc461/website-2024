@@ -8,7 +8,7 @@ module EditorJsHelper
       level = data['level']
       "<h#{level}>#{data['text']}</h#{level}>"
     when 'list'
-      list_html data
+      list_html data, data['style'] == 'ordered' ? 'ol' : 'ul'
     when 'quote'
       quote_html data
     when 'delimiter'
@@ -24,20 +24,15 @@ module EditorJsHelper
 
   private
 
-  def list_html(data)
-    list_style = data['style'] == 'ordered' ? 'ol' : 'ul'
-    items = list_items data
-    "<#{list_style}>#{items}</#{list_style}>"
-  end
-
-  def list_items(data)
-    data['items'].map do |item|
+  def list_html(data, list_style)
+    items = data['items'].map do |item|
       inner_list = ''
       unless item['items'].empty?
-        inner_list = list_items item
+        inner_list = list_html item, list_style
       end
       "<li>#{item['content']}#{inner_list}</li>"
     end.join
+    "<#{list_style}>#{items}</#{list_style}>"
   end
 
   def table_html(data)
