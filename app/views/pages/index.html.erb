@@ -1,14 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Pages</h1>
+<div class="card">
+  <div class="card-body">
+    <h1>Pages</h1>
+  </div>
+</div>
 
 <div id="pages">
   <% @pages.each do |page| %>
-    <%= render page %>
-    <p>
-      <%= link_to "Show this page", page %>
-    </p>
+    <div class="card">
+      <div class="card-body">
+        <%= render page %>
+      </div>
+      <div class="card-footer">
+        <%= link_to "Show this page", page %>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New page", new_page_path %>
+<%= link_to "New page", new_page_path, class: "btn btn-cardlike" %>
