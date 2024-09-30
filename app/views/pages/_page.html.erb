@@ -1,3 +1,7 @@
 <div id="<%= dom_id page %>">
-  <%= page.html_cache.html_safe %>
+  <% unless page.html_cache.nil? %>
+    <%= page.html_cache.html_safe %>
+  <% else %>
+    <%= render_content(page.content) %>
+  <% end %>
 </div>
