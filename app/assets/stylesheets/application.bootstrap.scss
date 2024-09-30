@@ -125,3 +125,7 @@ main {
     @extend .row;
     --bs-gutter-x: 0;
 }
+
+.card-footer:has(.card-footer-btn-group) {
+    @extend .p-0;
+}

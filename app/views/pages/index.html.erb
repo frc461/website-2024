@@ -11,7 +11,9 @@
         <%= render page %>
       </div>
       <div class="card-footer">
-        <%= link_to "Show this page", page %>
+        <div class="card-footer-btn-group">
+          <%= link_to "Show this page", page, class: 'btn' %>
+        </div>
       </div>
     </div>
   <% end %>
