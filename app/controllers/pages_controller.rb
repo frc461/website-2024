@@ -21,7 +21,7 @@ class PagesController < ApplicationController
 
   # POST /pages or /pages.json
   def create
-    @page = Page.new(page_params)
+    @page = Page.new(page_params, html_cache: helpers.render_content(page_params[:content]))
 
     respond_to do |format|
       if @page.save
@@ -37,7 +37,7 @@ class PagesController < ApplicationController
   # PATCH/PUT /pages/1 or /pages/1.json
   def update
     respond_to do |format|
-      if @page.update(page_params)
+      if @page.update(page_params.merge(html_cache: helpers.render_content(page_params[:content])))
         format.html { redirect_to page_url(@page), notice: "Page was successfully updated." }
         format.json { render :show, status: :ok, location: @page }
       else
