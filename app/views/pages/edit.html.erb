@@ -9,6 +9,5 @@
 </div>
 
 <%= render "form", page: @page do %>
-  <%= link_to "Show this page", @page, class: 'btn' %>
-  <%= link_to "Back to pages", pages_path, class: 'btn' %>
+  <%= link_to "Discard changes", @page, data: { turbo_method: :get, turbo_confirm: 'Are you sure?' }, class: 'btn' %>
 <% end %>
