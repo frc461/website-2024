@@ -31,7 +31,7 @@ export default class extends Controller {
           class: NestedList,
           inlineToolbar: true,
           config: {
-            defaultStyle: "ordered"
+            defaultStyle: "ordered",
           },
         },
         quote: Quote,
@@ -40,6 +40,7 @@ export default class extends Controller {
         underline: Underline,
         alert: Alert,
       },
+      minHeight: 0,
     })
 
     this.element.addEventListener("submit", this.saveData.bind(this))
