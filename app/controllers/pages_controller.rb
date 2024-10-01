@@ -21,7 +21,7 @@ class PagesController < ApplicationController
 
   # POST /pages or /pages.json
   def create
-    @page = Page.new(page_params, html_cache: helpers.render_content(page_params[:content]))
+    @page = Page.new(page_params.merge(html_cache: helpers.render_content(page_params[:content])))
 
     respond_to do |format|
       if @page.save
