@@ -40,7 +40,7 @@ export default class extends Controller {
         underline: Underline,
         alert: Alert,
       },
-      minHeight: 0,
+      minHeight: 50,
     })
 
     this.element.addEventListener("submit", this.saveData.bind(this))
