@@ -20,7 +20,7 @@ export default class extends Controller {
     this.content_field = document.getElementById("content_hidden")
     this.editor = new EditorJS({
       holder: this.contentTarget,
-      data: this.getInitalContent(),
+      data: this.content_field.value ? JSON.parse(this.content_field.value) : {},
       tools: {
         paragraph: {
           class: Paragraph,
@@ -39,6 +39,17 @@ export default class extends Controller {
         table: Table,
         underline: Underline,
         alert: Alert,
+        image: {
+          class: ImageTool,
+          config: {
+            endpoints: {
+              byFile: "/page_assets/upload_image"
+            },
+            additionalRequestHeaders: {
+              "X-CSRF-Token": this.getCSRFToken()
+            }
+          }
+        }
       },
       minHeight: 50,
     })
@@ -46,8 +57,9 @@ export default class extends Controller {
     this.element.addEventListener("submit", this.saveData.bind(this))
   }
 
-  getInitalContent() {
-    return this.content_field.value ? JSON.parse(this.content_field.value) : {}
+  getCSRFToken() {
+    const meta = document.querySelector("meta[name='csrf-token']");
+    return meta ? meta.content : "";
   }
   
   async saveData(event) {

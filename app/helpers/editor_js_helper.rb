@@ -17,6 +17,8 @@ module EditorJsHelper
       table_html data
     when 'alert'
       alert_html data
+    when 'image'
+      image_html data
     else
       ''
     end
@@ -55,6 +57,14 @@ module EditorJsHelper
          #{data['caption']}
        </figcaption>
      </figure>"
+  end
+
+  def image_html(data)
+    "<figure class=\"figure\">
+       <img src=\"#{data['file']['url']}\" alt=\"#{data['caption']}\">
+       <figcaption class=\"figure-caption\">#{data['caption']}</figcaption>
+     </figure>
+    "
   end
 
   def alert_html(data)

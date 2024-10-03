@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @page_asset %>
+
+<div>
+  <%= link_to "Edit this page asset", edit_page_asset_path(@page_asset) %> |
+  <%= link_to "Back to page assets", page_assets_path %>
+
+  <%= button_to "Destroy this page asset", @page_asset, method: :delete %>
+</div>
