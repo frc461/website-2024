@@ -1,3 +1,5 @@
+import { NestedEditor } from "./nesting";
+
 export class Card {
     static get toolbox() {
         return {
@@ -6,11 +8,11 @@ export class Card {
         }
     }
 
-    constructor({data}){
+    constructor({data, config}){
         this.data = {
-            header: data.header ? data.header : '',
-            body: data.body ? data.body : '',
-            footer: data.footer ? data.footer : '',
+            header: new NestedEditor(data.header, config.tools(), 0),
+            body: new NestedEditor(data.body, config.tools(), 50),
+            footer: new NestedEditor(data.footer, config.tools(), 0),
             hasHeader: data.hasHeader ? true : false,
             hasFooter: data.hasFooter ? true : false,
         };
@@ -46,9 +48,9 @@ export class Card {
         parts[1].classList.add("card-body");
         parts[2].classList.add("card-footer");
 
-        parts[0].innerText = this.data.header;
-        parts[1].innerText = this.data.body;
-        parts[2].innerText = this.data.footer;
+        parts[0].appendChild(this.data.header.render());
+        parts[1].appendChild(this.data.body.render());
+        parts[2].appendChild(this.data.footer.render());
 
         parts.forEach(part => this.card.appendChild(part));
 
@@ -57,14 +59,11 @@ export class Card {
         return this.card;
     }
 
-    save(blockContent) {
-        let header = this.card.querySelector(".card-header");
-        let body = blockContent.querySelector(".card-body");
-        let footer = this.card.querySelector(".card-footer");
+    async save(blockContent) {
         return Object.assign(this.data, {
-            header: header.innerText,
-            body: body.innerText,
-            footer: footer.innerText,
+            header: await this.data.header.save(),
+            body: await this.data.body.save(),
+            footer: await this.data.footer.save(),
         })
     }
 

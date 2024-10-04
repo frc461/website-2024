@@ -19,35 +19,40 @@ export default class extends Controller {
   static targets = ["content"]
 
   connect() {
-    this.content_field = document.getElementById("content_hidden")
+    this.content_field = document.getElementById("content_hidden");
+
+    let tools = {
+      paragraph: {
+        class: Paragraph,
+        inlineToolbar: true,
+      },
+      header: Header,
+      list: {
+        class: NestedList,
+        inlineToolbar: true,
+        config: {
+          defaultStyle: "ordered",
+        },
+      },
+      quote: Quote,
+      delimiter: Delimiter,
+      table: Table,
+      underline: Underline,
+      alert: Alert,
+      card: {
+        class: Card,
+        inlineToolbar: true,
+        config: {
+          tools() { return tools }
+        },
+      },
+    };
     this.editor = new EditorJS({
       holder: this.contentTarget,
       data: this.getInitalContent(),
-      tools: {
-        paragraph: {
-          class: Paragraph,
-          inlineToolbar: true,
-        },
-        header: Header,
-        list: {
-          class: NestedList,
-          inlineToolbar: true,
-          config: {
-            defaultStyle: "ordered",
-          },
-        },
-        quote: Quote,
-        delimiter: Delimiter,
-        table: Table,
-        underline: Underline,
-        alert: Alert,
-        card: {
-          class: Card,
-          inlineToolbar: true,
-        },
-      },
+      tools: tools,
       minHeight: 50,
-    })
+    });
 
     this.element.addEventListener("submit", this.saveData.bind(this))
   }
