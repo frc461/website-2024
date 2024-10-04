@@ -17,6 +17,8 @@ module EditorJsHelper
       table_html data
     when 'alert'
       alert_html data
+    when 'card'
+      card_html data
     else
       ''
     end
@@ -60,6 +62,18 @@ module EditorJsHelper
   def alert_html(data)
     alignment = get_alignment_class data['align']
     "<div class=\"alert alert-#{data['type']} text-#{alignment}\">#{data['message']}</div>"
+  end
+
+  def card_html(data)
+    "<div class='card'>
+      #{card_part(data, 'header') if data['hasHeader']}
+      #{card_part(data, 'body')}
+      #{card_part(data, 'footer') if data['hasFooter']}
+    </div>"
+  end
+
+  def card_part(data, part)
+    "<div class='card-#{part}'>#{data[part]}</div>"
   end
 
   def get_alignment_class(align)

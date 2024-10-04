@@ -12,6 +12,8 @@ import ImageTool from "@editorjs/image"
 import AttachesTool from "@editorjs/attaches"
 import Alert from "editorjs-alert"
 
+import { Card } from "../card";
+
 // Connects to data-controller="editor"
 export default class extends Controller {
   static targets = ["content"]
@@ -39,6 +41,10 @@ export default class extends Controller {
         table: Table,
         underline: Underline,
         alert: Alert,
+        card: {
+          class: Card,
+          inlineToolbar: true,
+        },
       },
       minHeight: 50,
     })
