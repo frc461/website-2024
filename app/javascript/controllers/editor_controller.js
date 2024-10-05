@@ -9,7 +9,8 @@ export default class extends Controller {
 
     this.editor = new Quill("#content", {
       theme: 'snow'
-    }); 
+    });
+    this.editor.setContents(this.getInitalContent());
 
     this.element.addEventListener("submit", this.saveData.bind(this))
   }
@@ -18,11 +19,11 @@ export default class extends Controller {
     return this.content_field.value ? JSON.parse(this.content_field.value) : {}
   }
   
-  async saveData(event) {
-    event.preventDefault()
-    
-    const data = await this.editor.save()
+  saveData(event) {
+    event.preventDefault();
+
+    const data = this.editor.getContents();
     this.content_field.value = JSON.stringify(data)
-    this.element.submit()
+    this.element.submit();
   }
 }
