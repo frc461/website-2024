@@ -4,7 +4,7 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="card-body">
+    <div class="card-body p-0">
       <%= f.hidden_field :content, id: "content_hidden" %>
       <div id="content"></div>
     </div>
