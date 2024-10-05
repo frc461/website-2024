@@ -73,7 +73,10 @@ module EditorJsHelper
   end
 
   def card_part(data, part)
-    "<div class='card-#{part}'>#{data[part]}</div>"
+    html = data[part]['blocks'].map do |block|
+      block_as_html block
+    end.join.html_safe
+    "<div class='card-#{part}'>#{html}</div>"
   end
 
   def get_alignment_class(align)
