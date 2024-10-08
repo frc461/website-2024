@@ -61,11 +61,11 @@ export class Card {
     }
 
     async save(blockContent) {
-        return Object.assign(this.data, {
+        return {
             header: await this.data.header.save(),
             body: await this.data.body.save(),
             footer: await this.data.footer.save(),
-        })
+        }
     }
 
     validate(savedData) {
