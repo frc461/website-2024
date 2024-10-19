@@ -130,3 +130,7 @@ main {
 .card-footer:has(.card-footer-btn-group) {
     @extend .p-0;
 }
+
+.img {
+  max-width: 100% !important;
+}

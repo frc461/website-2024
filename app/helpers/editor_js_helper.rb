@@ -62,11 +62,12 @@ module EditorJsHelper
   end
 
   def image_html(data)
-    "<figure class=\"figure\">
-       <img src=\"#{data['file']['url']}\" alt=\"#{data['caption']}\">
-       <figcaption class=\"figure-caption\">#{data['caption']}</figcaption>
+    <<-HTML
+    <figure class="figure">
+       <img src="#{data['file']['url']}" style="max-width: 100%" alt="#{data['caption']}">
+       <figcaption class="figure-caption">#{data['caption']}</figcaption>
      </figure>
-    "
+    HTML
   end
 
   def alert_html(data)
