@@ -1,12 +1,18 @@
-<p style="color: green"><%= notice %></p>
+<%= content_for :title do %>
+  All Page Assets
+<% end %>
 
-<h1>Page assets</h1>
-
-<div id="page_assets">
-  <% @page_assets.each do |page_asset| %>
-    <%= render page_asset %>
-    <p>
-      <%= link_to "Show this page asset", page_asset %>
-    </p>
-  <% end %>
+<div class="card">
+  <div class="card-header">
+    <h1>All Page Assets</h2>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <% @page_assets.each do |page_asset| %>
+        <div class="col-md-5">
+          <%= render page_asset %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
