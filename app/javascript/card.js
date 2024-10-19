@@ -31,6 +31,7 @@ export class Card {
             "hasFooter": "Footer",
         };
         this.card = undefined;
+        this.parts = undefined;
     }
 
     render() {
@@ -40,7 +41,6 @@ export class Card {
         let parts = Array(3).fill().map(() => {
             let elem = document.createElement("div");
             elem.style.outline = "none";
-            elem.contentEditable = true;
             return elem;
         });
 
@@ -48,11 +48,12 @@ export class Card {
         parts[1].classList.add("card-body");
         parts[2].classList.add("card-footer");
 
+
         parts[0].appendChild(this.data.header.render());
         parts[1].appendChild(this.data.body.render());
         parts[2].appendChild(this.data.footer.render());
 
-        parts.forEach(part => this.card.appendChild(part));
+        this.parts = parts;
 
         this._refreshRender();
 
@@ -60,11 +61,11 @@ export class Card {
     }
 
     async save(blockContent) {
-        return Object.assign(this.data, {
+        return {
             header: await this.data.header.save(),
             body: await this.data.body.save(),
             footer: await this.data.footer.save(),
-        })
+        }
     }
 
     validate(savedData) {
@@ -82,12 +83,14 @@ export class Card {
     }
 
     _refreshRender() {
-        let header = this.card.querySelector(".card-header");
-        let footer = this.card.querySelector(".card-footer");
-        header.contentEditable = this.data.hasHeader;
-        footer.contentEditable = this.data.hasFooter;
-        header.classList.toggle("d-none", !this.data.hasHeader);
-        footer.classList.toggle("d-none", !this.data.hasFooter);
+        this.card.innerHTML = "";
+        if (this.hasHeader) {
+            this.card.appendChild(this.parts[0]);
+        }
+        this.card.appendChild(this.parts[1]);
+        if (this.hasFooter) {
+            this.card.appendChild(THIS.parts[2]);
+        }
     }
 
     _toggleSetting(setting) {

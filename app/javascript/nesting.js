@@ -2,16 +2,16 @@ import EditorJS from "@editorjs/editorjs"
 
 export class NestedEditor {
     constructor(data, tools, minHeight) {
-		this.tools = tools;
-		this.editor = undefined;
-		this.data = data ? data : {};
-		this.minHeight = minHeight == undefined ? 50 : minHeight;
-	}
+        this.tools = tools;
+        this.editor = undefined;
+        this.data = data ? data : {};
+        this.minHeight = minHeight == undefined ? 50 : minHeight;
+    }
 
-	async _rerender() {
+    async _rerender() {
         if (this.editor) { this.editor.destroy() }
 
-		this.wrapper.innerHTML = "";
+        this.wrapper.innerHTML = "";
 
         let editorElem = document.createElement("div");
 
@@ -26,34 +26,34 @@ export class NestedEditor {
             minHeight: this.minHeight,
         });
 
-		this.editor = editor;
-	}
+        this.editor = editor;
+    }
 
-	render() {
-		this.wrapper = document.createElement("div");
+    render() {
+        this.wrapper = document.createElement("div");
 
-		this.wrapper.addEventListener('paste', (event) => {
-			event.stopPropagation();
-		}, true);
+        this.wrapper.addEventListener('paste', (event) => {
+            event.stopPropagation();
+        }, true);
 
-		this.wrapper.addEventListener('keydown', (event) => {
-			if (event.key === "Enter") {
-				event.preventDefault();
-				event.stopImmediatePropagation();
-				event.stopPropagation();
-			}
-			if (event.key === "Tab") {
-				event.preventDefault();
-				event.stopImmediatePropagation();
-			}
-		});
+        this.wrapper.addEventListener('keydown', (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                event.stopPropagation();
+            }
+            if (event.key === "Tab") {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+            }
+        });
 
-		this._rerender();
-		return this.wrapper;
-	}
+        this._rerender();
+        return this.wrapper;
+    }
 
-	async save() {
+    async save() {
         this.data = await this.editor.save();
-		return this.data;
-	}
+        return this.data;
+    }
 }
