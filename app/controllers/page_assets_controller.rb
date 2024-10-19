@@ -1,5 +1,5 @@
 class PageAssetsController < ApplicationController
-  before_action :set_page_asset, only: %i[ show edit update destroy ]
+  before_action :set_page_asset, only: %i[ show destroy ]
 
   # GET /page_assets or /page_assets.json
   def index
@@ -8,43 +8,6 @@ class PageAssetsController < ApplicationController
 
   # GET /page_assets/1 or /page_assets/1.json
   def show
-  end
-
-  # GET /page_assets/new
-  def new
-    @page_asset = PageAsset.new
-  end
-
-  # GET /page_assets/1/edit
-  def edit
-  end
-
-  # POST /page_assets or /page_assets.json
-  def create
-    @page_asset = PageAsset.new(page_asset_params)
-
-    respond_to do |format|
-      if @page_asset.save
-        format.html { redirect_to page_asset_url(@page_asset), notice: "Page asset was successfully created." }
-        format.json { render :show, status: :created, location: @page_asset }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @page_asset.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /page_assets/1 or /page_assets/1.json
-  def update
-    respond_to do |format|
-      if @page_asset.update(page_asset_params)
-        format.html { redirect_to page_asset_url(@page_asset), notice: "Page asset was successfully updated." }
-        format.json { render :show, status: :ok, location: @page_asset }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @page_asset.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # DELETE /page_assets/1 or /page_assets/1.json
