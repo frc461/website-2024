@@ -41,7 +41,10 @@ export default class extends Controller {
         class: Card,
         inlineToolbar: true,
         config: {
-          tools() { return tools }
+          tools() { 
+            delete tools.card
+            return tools
+          }
         },
       },
       image: {
