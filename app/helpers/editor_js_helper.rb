@@ -51,14 +51,16 @@ module EditorJsHelper
 
   def quote_html(data)
     alignment = get_alignment_class data['alignment']
-    "<figure class=\"text-#{alignment}\">
-       <blockquote class=\"blockquote\">
+    <<-HTML
+    <figure class="text-#{alignment}>
+       <blockquote class=blockquote>
           <p>#{data['text']}</p>
        </blockquote>
-       <figcaption class=\"blockquote-footer\">
+       <figcaption class=blockquote-footer>
          #{data['caption']}
        </figcaption>
-     </figure>"
+     </figure>
+    HTML
   end
 
   def image_html(data)
@@ -76,11 +78,13 @@ module EditorJsHelper
   end
 
   def card_html(data)
-    "<div class='card'>
+    <<-HTML
+    <div class="card">
       #{card_part(data, 'header') if data['hasHeader']}
       #{card_part(data, 'body')}
       #{card_part(data, 'footer') if data['hasFooter']}
-    </div>"
+    </div>
+    HTML
   end
 
   def card_part(data, part)

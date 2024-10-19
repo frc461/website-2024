@@ -7,9 +7,7 @@ import Quote from "@editorjs/quote"
 import Delimiter from "@editorjs/delimiter"
 import Table from "@editorjs/table"
 import Underline from "@editorjs/underline"
-import LinkTool from "@editorjs/link"
 import ImageTool from "@editorjs/image"
-import AttachesTool from "@editorjs/attaches"
 import Alert from "editorjs-alert"
 
 import { Card } from "../card";
