@@ -50,6 +50,7 @@ class PagesController < ApplicationController
 
   # DELETE /pages/1 or /pages/1.json
   def destroy
+    authorize @page
     @page.destroy!
 
     respond_to do |format|

@@ -17,6 +17,15 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, notice: 'You are not allowed to do that' unless admin?
   end
 
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
+  private
+
+  def user_not_authorized
+    flash[:alert] = "You are not authorized to perform this action."
+    redirect_back_or_to(root_path)
+  end
+
   protected
 
   def configure_permitted_parameters

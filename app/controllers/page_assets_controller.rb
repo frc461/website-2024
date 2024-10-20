@@ -13,6 +13,7 @@ class PageAssetsController < ApplicationController
 
   # DELETE /page_assets/1 or /page_assets/1.json
   def destroy
+    authorize @page_asset
     @page_asset.destroy!
 
     respond_to do |format|
