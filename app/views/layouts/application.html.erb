@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Frc461Website2024</title>
+    <title><%= yield :title %> | Westside Boiler Invasion</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,10 +13,9 @@
 
   <body>
     <%= render partial: "layouts/navbar" %>
-    <main>
-      <div class="container-fluid">
-        <%= yield %>
-      </div>
+    <main class="container-fluid py-md-3">
+      <%= render partial: "layouts/alert" %>
+      <%= yield %>
     </main>
   </body>
 </html>

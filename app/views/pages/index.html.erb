@@ -1,0 +1,29 @@
+<%= content_for :title do %>
+  All Pages
+<% end %>
+
+<div class="card">
+  <div class="card-body">
+    <h1>Pages</h1>
+  </div>
+</div>
+
+<div id="pages">
+  <% @pages.each do |page| %>
+    <div class="card">
+      <div class="card-header">
+        <h1 class="text-center"><%= page.title %></h1>
+      </div>
+      <div class="card-body">
+        <%= render page %>
+      </div>
+      <div class="card-footer">
+        <div class="card-footer-btn-group">
+          <%= link_to "Show this page", page, class: 'btn' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New page", new_page_path, class: "btn btn-cardlike w-100" %>

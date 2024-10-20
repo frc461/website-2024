@@ -1,0 +1,7 @@
+<div id="<%= dom_id page %>" class="w-50 mx-auto">
+  <% unless page.html_cache.nil? %>
+    <%= page.html_cache.html_safe %>
+  <% else %>
+    <%= render_content(page.content) %>
+  <% end %>
+</div>

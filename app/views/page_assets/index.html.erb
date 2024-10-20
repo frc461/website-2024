@@ -1,0 +1,18 @@
+<%= content_for :title do %>
+  All Page Assets
+<% end %>
+
+<div class="card">
+  <div class="card-header">
+    <h1>All Page Assets</h2>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <% @page_assets.each do |page_asset| %>
+        <div class="col-md-5">
+          <%= render page_asset %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

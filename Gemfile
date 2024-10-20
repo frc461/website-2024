@@ -71,3 +71,5 @@ end
 gem "devise", "~> 4.9"
 
 gem "simple_form", "~> 5.3"
+
+gem 'friendly_id', '~> 5.5.0'

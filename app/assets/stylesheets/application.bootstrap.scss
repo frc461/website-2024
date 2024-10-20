@@ -10,7 +10,7 @@ $orange: #e48214;
 
 $blue: #0066b3;
 $bright_red: #ed1c24;
-$slightly_dark_gray: #9a989a;
+$darkish_gray: #9a989a;
 $dark_gray: #231f20;
 $light_blue: #009cd7;
 $bright_orange: #f57e25;
@@ -18,6 +18,10 @@ $green: #00a651;
 $purple: #662d91;
 
 $primary: $gold;
+
+$card-border-width: 2px;
+$card-border-color: rgb(97, 97, 97);
+$card-border-radius: 6px;
 
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
@@ -63,3 +67,70 @@ $primary: $gold;
 
 // Utilities
 @import "bootstrap/scss/utilities/api";
+
+@import "editor.js";
+
+
+main {
+    background-color: $darkish_gray;
+}
+
+html, body {
+    height: 100%;
+}
+
+main {
+    min-height: 100%;
+    overflow-y: hidden;
+}
+
+.card {
+    @extend .mb-md-3;
+}
+
+.btn-cardlike {
+    border-radius: #{$card-border-radius};
+    border-width: #{$card-border-width};
+    --#{$prefix}btn-bg: #{$card-bg};
+    --#{$prefix}btn-border-color: #{$card-border-color};
+    --#{$prefix}btn-hover-bg: #{shade-color($body-bg, 10%)};
+    --#{$prefix}btn-hover-border-color: var(--#{$prefix}btn-border-color);
+    --#{$prefix}btn-active-bg: #{shade-color($body-bg, 20%)};
+    --#{$prefix}btn-active-border-color: var(--#{$prefix}btn-border-color);
+}
+
+.card-footer-btn-group > .btn {
+    @extend .col;
+    @extend .btn-cardlike;
+    border-width: 0;
+    border-radius: 0;
+}
+
+.card-footer-btn-group > :not(.btn:first-child) {
+    border-left-width: #{calc($card-border-width/2)};
+}
+
+.card-footer-btn-group > :not(.btn:last-child) {
+    border-right-width: #{calc($card-border-width/2)};
+}
+
+.card-footer-btn-group > .btn:first-child {
+    border-bottom-left-radius: #{$card-border-radius};
+}
+
+.card-footer-btn-group > .btn:last-child {
+    border-bottom-right-radius: #{$card-border-radius};
+}
+
+.card-footer-btn-group {
+    @extend .row;
+    --bs-gutter-x: 0;
+}
+
+.card-footer:has(.card-footer-btn-group) {
+    @extend .p-0;
+}
+
+.img {
+  max-width: 100% !important;
+}

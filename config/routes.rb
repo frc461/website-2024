@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :pages
+  resources :page_assets, only: %i[ index show destroy ] do
+    post :upload_image, on: :collection
+  end
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   get "dashboard", to: "welcome#dashboard"

@@ -1,0 +1,18 @@
+<%= content_for :title do %>
+  <%= @page_asset.id %>
+<% end %>
+
+<div class="card">
+  <div class="card-header">
+    <h1 class="text-center"><%= @page_asset.id %></h1>
+  </div>
+  <div class="card-body w-50 mx-auto text-center">
+    <%= image_tag rails_blob_url(@page_asset.asset), style: 'max-width: 100%' %>
+  </div>
+  <div class="card-footer">
+    <div class="card-footer-btn-group">
+      <%= link_to "Back to all assets", page_assets_path, class: 'btn' %>
+      <%= link_to "Destroy this asset", @page_asset, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn' %>
+    </div>
+  </div>
+</div>
