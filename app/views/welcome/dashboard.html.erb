@@ -13,7 +13,23 @@
           <div class="card-header">
             <h3 class="text-center">Pages</h3>
           </div>
-          <div class="card-body"></div>
+          <div class="card-body">
+            <div class="row">
+              <% Page.all.order(title: :asc).first(3).each do |page| %>
+                <div class="col-md-4">
+                  <%= render page %>
+                </div>
+              <% end %>
+              <% if Page.count - 3 > 0 %>
+                <p>... and <%= Page.count - 3 %> more</p>
+              <% end %>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-footer-btn-group">
+              <%= link_to 'View All Pages', pages_path, class: 'btn' %>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
@@ -21,7 +37,23 @@
           <div class="card-header">
             <h3 class="text-center">Assets</h3>
           </div>
-          <div class="card-body"></div>
+          <div class="card-body">
+            <div class="row">
+              <% PageAsset.all.order(id: :asc).first(3).each do |page_asset| %>
+                <div class="col-md-4">
+                  <%= render page_asset %>
+                </div>
+              <% end %>
+              <% if PageAsset.count - 3 > 0 %>
+                <p>... and <%= PageAsset.count - 3 %> more</p>
+              <% end %>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-footer-btn-group">
+              <%= link_to 'View All Page Assets', page_assets_path, class: 'btn' %>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
@@ -29,7 +61,9 @@
           <div class="card-header">
             <h3 class="text-center">Recent Activities</h3>
           </div>
-          <div class="card-body"></div>
+          <div class="card-body">
+            <h1 class="text-center">SOON&TRADE;</h1>
+          </div>
         </div>
       </div>
     </div>
