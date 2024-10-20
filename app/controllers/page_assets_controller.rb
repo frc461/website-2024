@@ -1,5 +1,6 @@
 class PageAssetsController < ApplicationController
   before_action :set_page_asset, only: %i[ show destroy ]
+  before_action :check_for_user, only: %i[ index show destroy upload_image ]
 
   # GET /page_assets or /page_assets.json
   def index
