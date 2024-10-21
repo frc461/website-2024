@@ -8,7 +8,9 @@ class PageAssetPolicy < ApplicationPolicy
   class Scope < ApplicationPolicy::Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      scope.all
+      unless user.nil?
+        scope.all
+      end
     end
   end
 

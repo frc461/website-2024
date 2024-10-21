@@ -1,0 +1,30 @@
+<%= content_for :title do %>
+  Search Results
+<% end %>
+
+<div class="card">
+  <div class="card-body">
+    <h1 class="text-center">Search Results</h1>
+  </div>
+</div>
+
+<% if @results.length == 0 %>
+  <div class="card">
+    <div class="card-body">
+      <h3 class="text-center">No results found!</h3>
+    </div>
+  </div>
+<% end %>
+
+<div>
+  <div class="row">
+    <% @results.each do |result| %>
+      <div class="col-md-4">
+        <h5>
+          <%= result.class.name %>:
+        </h5>
+        <%= render result %>
+      </div>
+    <% end %>
+  </div>
+</div>
