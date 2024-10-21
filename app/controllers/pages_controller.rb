@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
   # GET /pages/new
   def new
-    @page = Page.new
+    @page = authorize Page.new
   end
 
   # GET /pages/1/edit
@@ -22,7 +22,7 @@ class PagesController < ApplicationController
 
   # POST /pages or /pages.json
   def create
-    @page = Page.new(page_params.merge(html_cache: helpers.render_content(page_params[:content])))
+    @page = authorize Page.new(page_params.merge(html_cache: helpers.render_content(page_params[:content])))
 
     respond_to do |format|
       if @page.save

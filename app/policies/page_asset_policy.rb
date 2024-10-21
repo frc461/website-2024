@@ -10,11 +10,9 @@ class PageAssetPolicy < ApplicationPolicy
     def resolve
       unless user.nil?
         scope.all
+      else
+        scope.none
       end
     end
-  end
-
-  def destroy?
-    user.admin
   end
 end

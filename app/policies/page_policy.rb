@@ -11,8 +11,4 @@ class PagePolicy < ApplicationPolicy
       scope.all
     end
   end
-
-  def destroy?
-    user.admin
-  end
 end
