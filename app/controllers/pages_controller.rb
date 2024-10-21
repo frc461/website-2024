@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
   # GET /pages or /pages.json
   def index
-    @pages = Page.all
+    @pages = policy_scope(Page)
   end
 
   # GET /pages/1 or /pages/1.json
@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
   # GET /pages/new
   def new
-    @page = Page.new
+    @page = authorize Page.new
   end
 
   # GET /pages/1/edit
@@ -22,7 +22,7 @@ class PagesController < ApplicationController
 
   # POST /pages or /pages.json
   def create
-    @page = Page.new(page_params.merge(html_cache: helpers.render_content(page_params[:content])))
+    @page = authorize Page.new(page_params.merge(html_cache: helpers.render_content(page_params[:content])))
 
     respond_to do |format|
       if @page.save
@@ -50,7 +50,6 @@ class PagesController < ApplicationController
 
   # DELETE /pages/1 or /pages/1.json
   def destroy
-    authorize @page
     @page.destroy!
 
     respond_to do |format|
@@ -62,7 +61,7 @@ class PagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page
-      @page = Page.friendly.find(params[:id])
+      @page = authorize policy_scope(Page).friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

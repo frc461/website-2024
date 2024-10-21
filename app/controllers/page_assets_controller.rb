@@ -4,7 +4,7 @@ class PageAssetsController < ApplicationController
 
   # GET /page_assets or /page_assets.json
   def index
-    @page_assets = PageAsset.all
+    @page_assets = policy_scope(PageAsset)
   end
 
   # GET /page_assets/1 or /page_assets/1.json
@@ -13,7 +13,6 @@ class PageAssetsController < ApplicationController
 
   # DELETE /page_assets/1 or /page_assets/1.json
   def destroy
-    authorize @page_asset
     @page_asset.destroy!
 
     respond_to do |format|
@@ -39,7 +38,7 @@ class PageAssetsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page_asset
-      @page_asset = PageAsset.find(params[:id])
+      @page_asset = authorize policy_scope(PageAsset).find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
