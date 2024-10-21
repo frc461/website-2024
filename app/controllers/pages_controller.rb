@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
   # GET /pages or /pages.json
   def index
-    @pages = Page.all
+    @pages = policy_scope(Page)
   end
 
   # GET /pages/1 or /pages/1.json
@@ -50,7 +50,6 @@ class PagesController < ApplicationController
 
   # DELETE /pages/1 or /pages/1.json
   def destroy
-    authorize @page
     @page.destroy!
 
     respond_to do |format|
@@ -62,7 +61,7 @@ class PagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page
-      @page = Page.friendly.find(params[:id])
+      @page = authorize policy_scope(Page).friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
