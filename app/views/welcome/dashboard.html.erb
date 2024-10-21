@@ -5,6 +5,9 @@
 <div class="card">
   <div class="card-body">
     <h1 class="text-center">Welcome <b><%= current_user.name %></b>!</h1>
+    <% if current_user.admin %>
+      <p class="text-center">You are logged in as an admin!</p>
+    <% end %>
   </div>
 </div>
 
@@ -70,5 +73,5 @@
 </div>
 
 <div class="my-3">
-  <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-cardlike w-100" %>
+  <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-cardlike w-100" %>
 </div>
