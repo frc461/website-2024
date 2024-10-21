@@ -4,15 +4,20 @@
 
 <div class="card">
   <div class="card-header">
-    <h1>All Page Assets</h2>
+    <h1 class="text-center">All Page Assets</h2>
   </div>
   <div class="card-body">
     <div class="row">
       <% @page_assets.each do |page_asset| %>
-        <div class="col-md-5">
+        <div class="col-md-4">
           <%= render page_asset %>
         </div>
       <% end %>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="card-footer-btn-group">
+      <%= link_to 'Back to Dashboard', dashboard_path, class: 'btn' %>
     </div>
   </div>
 </div>

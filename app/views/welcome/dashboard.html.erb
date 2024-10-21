@@ -2,11 +2,76 @@
   Dashboard
 <% end %>
 
-<div class="container">
-  <div class="row">
-    <div class="py-md-3">
-      <h1>Welcome <b><%= current_user.name %></b>!</h1>
-      <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+<div class="card">
+  <div class="card-body">
+    <h1 class="text-center">Welcome <b><%= current_user.name %></b>!</h1>
+    <% if current_user.admin %>
+      <p class="text-center">You are logged in as an admin!</p>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-header">
+        <h3 class="text-center">Pages</h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <% Page.all.order(title: :asc).first(3).each do |page| %>
+            <div class="col-md-4">
+              <%= render page %>
+            </div>
+          <% end %>
+          <% if Page.count - 3 > 0 %>
+            <p>... and <%= Page.count - 3 %> more</p>
+          <% end %>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-footer-btn-group">
+          <%= link_to 'View All Pages', pages_path, class: 'btn' %>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-header">
+        <h3 class="text-center">Assets</h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <% PageAsset.all.order(id: :asc).first(3).each do |page_asset| %>
+            <div class="col-md-4">
+              <%= render page_asset %>
+            </div>
+          <% end %>
+          <% if PageAsset.count - 3 > 0 %>
+            <p>... and <%= PageAsset.count - 3 %> more</p>
+          <% end %>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-footer-btn-group">
+          <%= link_to 'View All Page Assets', page_assets_path, class: 'btn' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-header">
+        <h3 class="text-center">Recent Activities</h3>
+      </div>
+      <div class="card-body">
+        <h1 class="text-center">SOON&TRADE;</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="my-3">
+  <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-cardlike w-100" %>
 </div>
