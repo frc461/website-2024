@@ -1,13 +1,10 @@
 class PageCategoriesController < ApplicationController
-  before_action :set_page_category, only: %i[ show edit update destroy ]
+  before_action :set_page_category, only: %i[ edit update destroy ]
+  before_action :check_for_user
 
   # GET /page_categories or /page_categories.json
   def index
     @page_categories = policy_scope(PageCategory)
-  end
-
-  # GET /page_categories/1 or /page_categories/1.json
-  def show
   end
 
   # GET /page_categories/new
@@ -25,7 +22,7 @@ class PageCategoriesController < ApplicationController
 
     respond_to do |format|
       if @page_category.save
-        format.html { redirect_to page_category_url(@page_category), notice: "Page category was successfully created." }
+        format.html { redirect_to page_categories_url, notice: "Page category was successfully created." }
         format.json { render :show, status: :created, location: @page_category }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +35,7 @@ class PageCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @page_category.update(page_category_params)
-        format.html { redirect_to page_category_url(@page_category), notice: "Page category was successfully updated." }
+        format.html { redirect_to page_categories_url, notice: "Page category was successfully updated." }
         format.json { render :show, status: :ok, location: @page_category }
       else
         format.html { render :edit, status: :unprocessable_entity }

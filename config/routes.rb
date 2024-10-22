@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :dashboard, only: :index do
     get :settings, on: :collection
   end
-  resources :page_categories
+  resources :page_categories, except: :show
   resources :pages
   resources :page_assets, only: %i[ index show destroy ] do
     post :upload_image, on: :collection
