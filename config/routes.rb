@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :dashboard, only: :index do
+    get :settings, on: :collection
+  end
   resources :page_categories
   resources :pages
   resources :page_assets, only: %i[ index show destroy ] do
@@ -7,7 +10,6 @@ Rails.application.routes.draw do
   get "search" => "search#index"
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
-  get "dashboard", to: "welcome#dashboard"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

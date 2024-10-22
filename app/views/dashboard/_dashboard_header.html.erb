@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-body">
+    <h1 class="text-center">Welcome <b><%= current_user.name %></b>!</h1>
+    <% if current_user.admin %>
+      <p class="text-center">You are logged in as an admin!</p>
+    <% end %>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body nav nav-pills">
+    <%= link_to "Dashboard", dashboard_index_path, class: "nav-link #{"active" if current_page?(dashboard_index_path)}" %>
+    <%= link_to "Settings", settings_dashboard_index_path, class: "nav-link #{"active" if current_page?(settings_dashboard_index_path)}" %>
+  </div>
+</div>
