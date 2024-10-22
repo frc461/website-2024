@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :page_categories
   resources :pages
   resources :page_assets, only: %i[ index show destroy ] do
     post :upload_image, on: :collection
