@@ -61,7 +61,12 @@ class PagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page
-      @page = authorize policy_scope(Page).friendly.find(params[:id])
+      if params.include? :page_id
+        @page_category = authorize policy_scope(PageCategory).friendly.find(params[:id])
+        @page = authorize policy_scope(@page_category.pages).friendly.find(params[:page_id])
+      else
+        @page = authorize policy_scope(Page).friendly.find(params[:id])
+      end
     end
 
     # Only allow a list of trusted parameters through.
