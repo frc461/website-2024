@@ -1,5 +1,5 @@
 <%= content_for :title do %>
-  <%= @page_category.name %>
+  Page Category • <%= @page_category.name %>
 <% end %>
 
 <div class="card">
@@ -18,3 +18,7 @@
     <% end %>
   </div>
 </div>
+
+<% unless current_user.nil? %>
+  <%= link_to "Edit page category", edit_page_category_path(@page_category), class: "btn btn-cardlike w-100" %>
+<% end %>
