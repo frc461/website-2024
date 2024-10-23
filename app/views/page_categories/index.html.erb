@@ -16,4 +16,5 @@
 
 <% unless current_user.nil? %>
   <%= link_to "New page category", new_page_category_path, class: "btn btn-cardlike w-100" %>
+  <%= link_to "Back to Dashboard", settings_dashboard_index_path, class: "btn btn-cardlike w-100 my-2" %>
 <% end %>
