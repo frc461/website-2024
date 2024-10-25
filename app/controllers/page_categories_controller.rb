@@ -1,6 +1,6 @@
 class PageCategoriesController < ApplicationController
-  before_action :set_page_category, only: %i[ show edit update destroy ]
   before_action :check_for_user
+  before_action :set_page_category, only: %i[ show edit update destroy ]
 
   # GET /page_categories or /page_categories.json
   def index

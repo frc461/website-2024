@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   # HACK: extremely hacky way of routing, do not touch unless you want to experience lots of pain
   resources :pages
   resources :page_categories
-  resources :page_categories, except: %i[ index show new edit create update destroy ], path: "/" do
+  resources :page_categories, only: :none, path: "/" do
     get ":page_id", to: "pages#show", as: :page, on: :member
     # resources :pages, on: :member
   end
