@@ -5,8 +5,10 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="card-body">
+      <%= f.input :page_category_id, label: "Page Category (Optional)", as: :select, collection: PageCategory.all %>
       <%= f.hidden_field :content, id: "content_hidden" %>
-      <div id="content" data-editor-target="content"></div>
+      <%= f.label "Page Content", class: "form-label optional" %>
+      <div class="border rounded" id="content" data-editor-target="content"></div>
     </div>
 
     <div class="card-footer">

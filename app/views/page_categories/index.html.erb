@@ -1,0 +1,20 @@
+<%= content_for :title do %>
+  All Page Categories
+<% end %>
+
+<div class="card">
+  <div class="card-body">
+    <h1 class="text-center">Page Categories</h1>
+  </div>
+</div>
+
+<div id="pages">
+  <% @page_categories.each do |category| %>
+    <%= render category %>
+  <% end %>
+</div>
+
+<% unless current_user.nil? %>
+  <%= link_to "New page category", new_page_category_path, class: "btn btn-cardlike w-100" %>
+  <%= link_to "Back to Dashboard", settings_dashboard_index_path, class: "btn btn-cardlike w-100 my-2" %>
+<% end %>

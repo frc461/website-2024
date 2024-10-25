@@ -1,0 +1,24 @@
+<%= content_for :title do %>
+  Page Category • <%= @page_category.name %>
+<% end %>
+
+<div class="card">
+  <div class="card-body">
+    <h1 class="text-center">
+      <%= @page_category.name %>
+    </h1>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h4>Pages</h4>
+    <% @page_category.pages.each do |page| %>
+      <%= render page %>
+    <% end %>
+  </div>
+</div>
+
+<% unless current_user.nil? %>
+  <%= link_to "Edit page category", edit_page_category_path(@page_category), class: "btn btn-cardlike w-100" %>
+<% end %>

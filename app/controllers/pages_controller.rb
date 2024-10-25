@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
+  before_action :check_for_user, except: :show
   before_action :set_page, only: %i[ show edit update destroy ]
-  before_action :check_for_user, only: %i[ new edit create update destroy ]
 
   # GET /pages or /pages.json
   def index
@@ -61,11 +61,16 @@ class PagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page
-      @page = authorize policy_scope(Page).friendly.find(params[:id])
+      if params.include? :page_id
+        @page_category = authorize policy_scope(PageCategory).friendly.find(params[:id])
+        @page = authorize policy_scope(@page_category.pages).friendly.find(params[:page_id])
+      else
+        @page = authorize policy_scope(Page).friendly.find(params[:id])
+      end
     end
 
     # Only allow a list of trusted parameters through.
     def page_params
-      params.require(:page).permit(:title, :content)
+      params.require(:page).permit(:title, :content, :page_category_id)
     end
 end

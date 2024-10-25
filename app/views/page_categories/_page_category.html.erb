@@ -1,0 +1,14 @@
+<div class="card h-100">
+  <div class="card-body">
+    <h4 class="text-center">
+      <%= page_category.name %>
+    </h4>
+  </div>
+  <div class="card-footer">
+    <div class="card-footer-btn-group">
+      <%= link_to "Show this page category", page_category_path(page_category), class: 'btn' %>
+      <%= link_to "Edit this page category", edit_page_category_path(page_category), class: 'btn' %>
+      <%= link_to "Destroy this page category", page_category, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn' %>
+    </div>
+  </div>
+</div>
