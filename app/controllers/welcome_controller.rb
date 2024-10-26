@@ -11,6 +11,8 @@ class WelcomeController < ApplicationController
   end
 
   def news
+    @category = PageCategory.friendly.find('news')
+    @pages = @category.pages
   end
 
   def resources
