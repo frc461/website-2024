@@ -13,9 +13,7 @@
     <% @pages.each do |page| %>
       <div class="col-md-4">
         <%= render page do %>
-          <% unless current_user %>
-            <%= link_to 'Show this page', page_page_category_path(@category.slug, page.slug), class: 'btn' %>
-          <% end %>
+          <%= link_to 'Show this page', page_page_category_path(@category.slug, page.slug), class: 'btn' %>
         <% end %>
       </div>
     <% end %>

@@ -6,7 +6,7 @@
   </div>
   <div class="card-footer">
     <div class="card-footer-btn-group">
-      <% if current_user %>
+      <% if current_page?(dashboard_index_path) || current_page?(pages_path) %>
         <%= link_to 'Show this page', page, class: 'btn' %>
       <% end %>
       <%= yield %>
