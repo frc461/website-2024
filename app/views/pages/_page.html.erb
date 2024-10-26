@@ -6,7 +6,10 @@
   </div>
   <div class="card-footer">
     <div class="card-footer-btn-group">
-      <%= link_to 'Show this page', page, class: 'btn' %>
+      <% if current_user %>
+        <%= link_to 'Show this page', page, class: 'btn' %>
+      <% end %>
+      <%= yield %>
     </div>
   </div>
 </div>

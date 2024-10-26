@@ -6,6 +6,8 @@ class WelcomeController < ApplicationController
   end
 
   def history
+    @category = PageCategory.friendly.find('history')
+    @pages = @category.pages
   end
 
   def news
