@@ -8,14 +8,12 @@
   </div>
 </div>
 
-<div id="pages">
-  <div class="row">
-    <% @pages.order(created_at: :desc).each do |page| %>
-      <div class="col-md-4 mb-3">
-        <%= render page do %>
-          <%= link_to 'Show this page', page_page_category_path(@category.slug, page.slug), class: 'btn' %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+<div class="row">
+  <% @pages.order(created_at: :desc).each do |page| %>
+    <div class="col-md-4 mb-3">
+      <%= render page do %>
+        <%= link_to 'Show this page', page_page_category_path(@category.slug, page.slug), class: 'btn' %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
