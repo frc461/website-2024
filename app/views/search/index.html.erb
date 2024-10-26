@@ -19,11 +19,15 @@
 <div>
   <div class="row">
     <% @results.each do |result| %>
-      <div class="col-md-4">
+      <div class="col-md-4 mb-5">
         <h5>
           <%= result.class.name %>:
         </h5>
-        <%= render result %>
+        <%= render result do %>
+          <% if result.class.name == 'Page' && result.page_category_id %>
+            <%= link_to 'Show this page', page_page_category_path(PageCategory.friendly.find(result.page_category_id).slug, result.slug), class: 'btn' %>
+          <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>
