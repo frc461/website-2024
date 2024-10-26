@@ -8,12 +8,14 @@
   </div>
 </div>
 
-<div id="pages">
+<div class="row">
   <% @pages.each do |page| %>
-    <%= render page %>
+    <div class="col-md-4 mb-3">
+      <%= render page %>
+    </div>
   <% end %>
 </div>
 
-<% unless current_user.nil? %>
+<% if current_user %>
   <%= link_to "New page", new_page_path, class: "btn btn-cardlike w-100" %>
 <% end %>
