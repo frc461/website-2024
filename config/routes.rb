@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :page_assets, only: %i[ index show destroy ] do
     post :upload_image, on: :collection
   end
-  get "search" => "search#index"
+  get "search", to: "search#index"
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,6 +13,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "welcome#index"
+  get "about_us", to: "welcome#about"
+  get "history", to: "welcome#history"
+  get "news", to: "welcome#news"
+  get "resources", to: "welcome#resources"
+  get "safety", to: "welcome#safety"
 
   resources :dashboard, only: :index do
     get :settings, on: :collection
