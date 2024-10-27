@@ -79,59 +79,59 @@ main {
 }
 
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
 main {
-    min-height: 100%;
-    overflow-y: hidden;
+  min-height: 100%;
+  overflow-y: hidden;
 }
 
 .card {
-    @extend .mb-md-3;
+  @extend .mb-md-3;
 }
 
 .btn-cardlike {
-    border-radius: #{$card-border-radius};
-    border-width: #{$card-border-width};
-    --#{$prefix}btn-bg: #{$card-bg};
-    --#{$prefix}btn-border-color: #{$card-border-color};
-    --#{$prefix}btn-hover-bg: #{shade-color($body-bg, 10%)};
-    --#{$prefix}btn-hover-border-color: var(--#{$prefix}btn-border-color);
-    --#{$prefix}btn-active-bg: #{shade-color($body-bg, 20%)};
-    --#{$prefix}btn-active-border-color: var(--#{$prefix}btn-border-color);
+  border-radius: #{$card-border-radius};
+  border-width: #{$card-border-width};
+  --#{$prefix}btn-bg: #{$card-bg};
+  --#{$prefix}btn-border-color: #{$card-border-color};
+  --#{$prefix}btn-hover-bg: #{shade-color($body-bg, 10%)};
+  --#{$prefix}btn-hover-border-color: var(--#{$prefix}btn-border-color);
+  --#{$prefix}btn-active-bg: #{shade-color($body-bg, 20%)};
+  --#{$prefix}btn-active-border-color: var(--#{$prefix}btn-border-color);
 }
 
 .card-footer-btn-group > .btn {
-    @extend .col;
-    @extend .btn-cardlike;
-    border-width: 0;
-    border-radius: 0;
+  @extend .col;
+  @extend .btn-cardlike;
+  border-width: 0;
+  border-radius: 0;
 }
 
 .card-footer-btn-group > :not(.btn:first-child) {
-    border-left-width: #{calc($card-border-width/2)};
+  border-left-width: #{calc($card-border-width/2)};
 }
 
 .card-footer-btn-group > :not(.btn:last-child) {
-    border-right-width: #{calc($card-border-width/2)};
+  border-right-width: #{calc($card-border-width/2)};
 }
 
 .card-footer-btn-group > .btn:first-child {
-    border-bottom-left-radius: #{$card-border-radius};
+  border-bottom-left-radius: #{$card-border-radius};
 }
 
 .card-footer-btn-group > .btn:last-child {
-    border-bottom-right-radius: #{$card-border-radius};
+  border-bottom-right-radius: #{$card-border-radius};
 }
 
 .card-footer-btn-group {
-    @extend .row;
-    --bs-gutter-x: 0;
+  @extend .row;
+  --bs-gutter-x: 0;
 }
 
 .card-footer:has(.card-footer-btn-group) {
-    @extend .p-0;
+  @extend .p-0;
 }
 
 .img {
