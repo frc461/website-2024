@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   get "history", to: "welcome#history"
   get "news", to: "welcome#news"
   get "resources", to: "welcome#resources"
-  get "safety", to: "welcome#safety"
 
   resources :dashboard, only: :index do
     get :settings, on: :collection

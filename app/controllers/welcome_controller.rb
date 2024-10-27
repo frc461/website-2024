@@ -17,7 +17,4 @@ class WelcomeController < ApplicationController
 
   def resources
   end
-
-  def safety
-  end
 end
