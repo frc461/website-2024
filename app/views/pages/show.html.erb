@@ -22,7 +22,7 @@
         <%= link_to "Back to pages", pages_path, class: 'btn' %>
         <%= link_to "Destroy this page", @page, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn' %>
       <% end %>
-      <% if current_user.nil? && @page_category %>
+      <% if current_user.nil? && @page_category && path_exists?("/#{@page_category.slug}") %>
         <%= link_to "Back to #{@page_category.name}", "/#{@page_category.slug}", class: 'btn' %>
       <% end %>
     </div>
