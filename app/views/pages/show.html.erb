@@ -24,6 +24,8 @@
       <% end %>
       <% if current_user.nil? && @page_category && path_exists?("/#{@page_category.slug}") %>
         <%= link_to "Back to #{@page_category.name}", "/#{@page_category.slug}", class: 'btn' %>
+      <% elsif current_user.nil? %>
+        <%= link_to "Back", :back, class: 'btn' %>
       <% end %>
     </div>
   </div>
