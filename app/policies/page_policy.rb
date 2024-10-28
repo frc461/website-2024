@@ -8,7 +8,11 @@ class PagePolicy < ApplicationPolicy
   class Scope < ApplicationPolicy::Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      scope.all
+      if user
+        scope.all
+      else
+        scope.where(draft: [nil, false])
+      end
     end
   end
 end
