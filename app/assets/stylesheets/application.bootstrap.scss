@@ -72,21 +72,12 @@ $card-border-radius: 6px;
 @import "editor.js";
 
 
+// 58.3px is the height of the navbar, $navbar-brand-height doesn't work for some reason
 main {
   background: url(wabi.png) left bottom no-repeat, url(scarlett.png) right bottom no-repeat;
   background-size: 100px, 100px;
   background-color: $darkish_gray;
-}
-
-
-html, body {
-  height: 100vh;
-}
-
-// 58.3px is the height of the navbar, $navbar-brand-height doesn't work for some reason
-main {
   min-height: calc(100vh - 58.3px);
-  overflow-y: hidden;
 }
 
 .card {
