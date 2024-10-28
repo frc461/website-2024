@@ -8,7 +8,8 @@
       <%= f.input :page_category_id, label: "Page Category (Optional)", as: :select, collection: PageCategory.all %>
       <%= f.hidden_field :content, id: "content_hidden" %>
       <%= f.label "Page Content", class: "form-label optional" %>
-      <div class="border rounded" id="content" data-editor-target="content"></div>
+      <div class="border rounded mb-3" id="content" data-editor-target="content"></div>
+      <%= f.input :draft %>
     </div>
 
     <div class="card-footer">
