@@ -6,13 +6,13 @@ class WelcomeController < ApplicationController
   end
 
   def history
-    @category = PageCategory.friendly.find('history')
-    @pages = @category.pages
+    @category = policy_scope(PageCategory).friendly.find('history')
+    @pages = policy_scope(@category.pages)
   end
 
   def news
-    @category = PageCategory.friendly.find('news')
-    @pages = @category.pages
+    @category = policy_scope(PageCategory).friendly.find('news')
+    @pages = policy_scope(@category.pages)
   end
 
   def resources
