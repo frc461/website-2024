@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_22_212512) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_28_145058) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -76,6 +76,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_22_212512) do
     t.string "slug"
     t.string "html_cache"
     t.bigint "page_category_id"
+    t.boolean "draft"
     t.index ["page_category_id"], name: "index_pages_on_page_category_id"
     t.index ["slug"], name: "index_pages_on_slug", unique: true
   end
