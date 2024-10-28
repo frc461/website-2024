@@ -38,7 +38,7 @@
       <div class="card-body">
         <div class="row">
           <% PageAsset.all.order(id: :desc).first(2).each do |page_asset| %>
-            <div class="col-md-2 mb-3">
+            <div class="col-md-6 mb-3">
               <%= render page_asset %>
             </div>
           <% end %>
