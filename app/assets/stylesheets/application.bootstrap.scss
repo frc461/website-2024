@@ -79,11 +79,11 @@ main {
 }
 
 
-// 58.3px is the height of the navbar, $navbar-brand-height doesn't work for some reason
 html, body {
-  height: calc(100vh - 58.3px);
+  height: 100vh;
 }
 
+// 58.3px is the height of the navbar, $navbar-brand-height doesn't work for some reason
 main {
   min-height: calc(100vh - 58.3px);
   overflow-y: hidden;
