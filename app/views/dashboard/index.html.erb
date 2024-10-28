@@ -12,7 +12,7 @@
       </div>
       <div class="card-body">
         <div class="row">
-          <% Page.all.order(title: :asc).first(3).each do |page| %>
+          <% Page.all.order(id: :desc).first(3).each do |page| %>
             <div class="col-md-4 mb-3">
               <%= render page %>
             </div>
@@ -37,7 +37,7 @@
       </div>
       <div class="card-body">
         <div class="row">
-          <% PageAsset.all.order(id: :asc).first(3).each do |page_asset| %>
+          <% PageAsset.all.order(id: :desc).first(3).each do |page_asset| %>
             <div class="col-md-4 mb-3">
               <%= render page_asset %>
             </div>

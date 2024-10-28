@@ -9,7 +9,7 @@
 </div>
 
 <div class="row">
-  <% @page_assets.each do |page_asset| %>
+  <% @page_assets.order(id: :asc).each do |page_asset| %>
     <div class="col-md-4 mb-3">
       <%= render page_asset %>
     </div>

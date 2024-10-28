@@ -9,7 +9,7 @@
 </div>
 
 <div class="row">
-  <% @pages.each do |page| %>
+  <% @pages.order(title: :asc).each do |page| %>
     <div class="col-md-4 mb-3">
       <%= render page %>
     </div>
