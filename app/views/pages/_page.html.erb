@@ -1,7 +1,7 @@
 <div class="card h-100">
-  <div class="card-body text-center">
-    <% if page.draft %><span class="badge rounded-pill text-bg-primary">Draft</span><% end %> 
-    <h4 class="d-inline-block"><%= page.title %></h4>
+  <div class="card-body text-center d-flex justify-content-center align-items-center">
+    <% if page.draft %><span class="badge rounded-pill text-bg-primary position-absolute top-0 start-0 m-2">Draft</span><% end %> 
+    <h4 class="overflow-hidden"><%= page.title %></h4>
   </div>
   <div class="card-footer">
     <div class="card-footer-btn-group">
