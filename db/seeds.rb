@@ -10,7 +10,7 @@
 
 include ApplicationHelper
 
-["history", "news", "resources"].each do |category_name|
+["history", "news", "resources", "general resources", "programming resources", "tech resources"].each do |category_name|
   PageCategory.find_or_create_by!(name: category_name)
 end
 

@@ -16,5 +16,7 @@ class WelcomeController < ApplicationController
   end
 
   def resources
+    @category = policy_scope(PageCategory).friendly.find('resources')
+    @pages = policy_scope(@category.pages)
   end
 end
