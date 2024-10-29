@@ -1,0 +1,36 @@
+{
+  "time": 1729984730656,
+  "blocks": [
+    {
+      "id": "Rwz5ysiWx1",
+      "type": "header",
+      "data": {
+        "text": "Awards:",
+        "level": 2
+      }
+    },
+    {
+      "id": "NfC7fAc1BO",
+      "type": "paragraph",
+      "data": {
+        "text": "<b>Boilermaker Regional</b> - Dean’s List Finalist"
+      }
+    },
+    {
+      "id": "4UFzqZPqKn",
+      "type": "header",
+      "data": {
+        "text": "Summary:",
+        "level": 2
+      }
+    },
+    {
+      "id": "cinNgWQEkf",
+      "type": "paragraph",
+      "data": {
+        "text": "In their 14th year, WBI commenced by meticulously crafting a robot tailored for the Ultimate Ascent challenge. Their competitive journey began at the esteemed Boilermaker Regional hosted at Purdue University, where they concluded qualification matches impressively ranked 15th. Progressing to the playoff matches, they distinguished themselves as semifinalists. Notably, alongside the robot's achievements, the team received the esteemed Dean’s List Finalist award, a testament to their commitment to excellence both on and off the field. Their success extended to the Buckeye Regional in Cleveland, Ohio, where they assumed the role of the 8th Alliance Captain, further solidifying their reputation as formidable competitors. Wrapping up their season with participation in the Indiana Robotics Invitational in Indianapolis, WBI concluded their 14th year ranked 26th, embodying a tradition of perseverance and achievement."
+      }
+    }
+  ],
+  "version": "2.30.6"
+}

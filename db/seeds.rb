@@ -8,6 +8,21 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-["history", "news", "resources"].each do |category_name|
+include ApplicationHelper
+
+["history", "news", "resources", "general resources", "programming resources", "tech resources"].each do |category_name|
   PageCategory.find_or_create_by!(name: category_name)
+end
+
+Dir["db/seeds_json/*/*"].each do |file|
+  name = file.delete_prefix("db/seeds_json/").chomp(".json").split('/')
+  title = name[1].split('-').length == 1 ? name[1].titleize : name[1].split('-')[-1].titleize
+  unless Page.find_by_title(title)
+    Page.create!(
+      title: title,
+      content: File.read(file),
+      html_cache: ApplicationHelper.render_content(File.read(file)),
+      page_category_id: PageCategory.friendly.find(name[0]).id
+    )
+  end
 end

@@ -1,0 +1,36 @@
+{
+  "time": 1729984283074,
+  "blocks": [
+    {
+      "id": "a4LjW4jYjy",
+      "type": "header",
+      "data": {
+        "text": "Awards:",
+        "level": 2
+      }
+    },
+    {
+      "id": "TCns0FI9r9",
+      "type": "paragraph",
+      "data": {
+        "text": "<b>Boilermaker Regional</b> - FIRST Dean’s List Finalist Award, Judges Award, Website Award"
+      }
+    },
+    {
+      "id": "oQSVr1VD-J",
+      "type": "header",
+      "data": {
+        "text": "Summary:",
+        "level": 2
+      }
+    },
+    {
+      "id": "HXuh5JYzZm",
+      "type": "paragraph",
+      "data": {
+        "text": "During its 12th season, WBI united to engineer a robot for LOGO MOTION. Their participation at the Boilermaker Regional held at Purdue University in March proved highly fruitful, as the team secured multiple accolades including the Judges Award, the Website Award, and Dean’s List Finalist recognition. Following the official season, WBI continued its pursuit of excellence by participating in the off-season event, the Indiana Robotics Invitational in Indianapolis."
+      }
+    }
+  ],
+  "version": "2.30.6"
+}

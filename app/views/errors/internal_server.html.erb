@@ -1,0 +1,18 @@
+<%= content_for :title do %>
+  Internal Server Error
+<% end %>
+
+<div class="d-flex justify-content-center">
+  <div class="card">
+    <div class="card-body text-center">
+      <h1>Internal Server Error</h1>
+      <h4>Something went wrong interally.</h4>
+      <p>If you are the application owner, check the logs for more information.</p>
+    </div>
+    <div class="card-footer">
+      <div class="card-footer-btn-group">
+        <%= link_to "Back", :back, class: "btn" %>
+      </div>
+    </div>
+  </div>
+</div>

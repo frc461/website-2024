@@ -10,15 +10,18 @@
   </div>
 </div>
 
-<div class="card">
-  <div class="card-body">
-    <h4>Pages</h4>
-    <% @page_category.pages.each do |page| %>
-      <%= render page %>
-    <% end %>
-  </div>
+<h4>Pages:</h4>
+<div class="row">
+  <% @page_category.pages.each do |page| %>
+    <div class="col-md-4 mb-3">
+      <%= render page do %>
+        <%= link_to 'Show this page', page_page_category_path(@page_category.slug, page.slug), class: 'btn' %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
-<% unless current_user.nil? %>
+<% if current_user %>
   <%= link_to "Edit page category", edit_page_category_path(@page_category), class: "btn btn-cardlike w-100" %>
+  <%= link_to "Back to page categories", page_categories_path, class: "btn btn-cardlike w-100 my-2" %>
 <% end %>

@@ -1,0 +1,50 @@
+{
+  "time": 1729800397257,
+  "blocks": [
+    {
+      "id": "y8CNkxCVrh",
+      "type": "header",
+      "data": {
+        "text": "Awards:",
+        "level": 2
+      }
+    },
+    {
+      "id": "5bL1tNMz9J",
+      "type": "paragraph",
+      "data": {
+        "text": "<b>Boilermaker Regional</b> - Engineering Inspiration and Website Award"
+      }
+    },
+    {
+      "id": "gPEe_oHets",
+      "type": "paragraph",
+      "data": {
+        "text": "<b>Buckeye Regional</b> - Website Design Award&nbsp;"
+      }
+    },
+    {
+      "id": "wC8roBX9k1",
+      "type": "paragraph",
+      "data": {
+        "text": "<b>World Championship</b> - Website Award"
+      }
+    },
+    {
+      "id": "irFVPxwlgl",
+      "type": "header",
+      "data": {
+        "text": "Summary:",
+        "level": 2
+      }
+    },
+    {
+      "id": "5ClBgmL56u",
+      "type": "paragraph",
+      "data": {
+        "text": "With a robust grounding in FIRST, the team enthusiastically embraced the challenges presented during the 2010 season. Demonstrating their prowess at a multitude of events, notably the Boilermaker Regional in West Lafayette, the team achieved commendable success, securing both the Engineering Inspiration Award and the Website Award, while advancing to the Semifinals. Further showcasing their excellence, at the Buckeye Regional in Cleveland, Ohio, Team 461 garnered the Website Design Award and progressed to the Quarterfinals. Their journey culminated at the World Championship in Atlanta, Georgia, where they achieved a notable 45th ranking in the Newton Division. Additionally, their participation in the Indiana Robotics Invitational in Indianapolis underscored their unwavering commitment to continual enhancement and competitive excellence throughout the entirety of the season."
+      }
+    }
+  ],
+  "version": "2.30.6"
+}

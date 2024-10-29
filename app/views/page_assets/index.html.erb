@@ -3,21 +3,19 @@
 <% end %>
 
 <div class="card">
-  <div class="card-header">
+  <div class="card-body">
     <h1 class="text-center">All Page Assets</h2>
   </div>
-  <div class="card-body">
-    <div class="row">
-      <% @page_assets.each do |page_asset| %>
-        <div class="col-md-4">
-          <%= render page_asset %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-  <div class="card-footer">
-    <div class="card-footer-btn-group">
-      <%= link_to 'Back to Dashboard', dashboard_index_path, class: 'btn' %>
-    </div>
-  </div>
 </div>
+
+<div class="row">
+  <% @page_assets.order(id: :asc).each do |page_asset| %>
+    <div class="col-md-4 mb-3">
+      <%= render page_asset %>
+    </div>
+  <% end %>
+</div>
+
+<% if current_user %>
+  <%= link_to 'Back to Dashboard', dashboard_index_path, class: 'btn btn-cardlike w-100' %>
+<% end %>

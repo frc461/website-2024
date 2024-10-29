@@ -10,4 +10,11 @@ module ApplicationHelper
     end
     html.join.html_safe
   end
+
+  def path_exists?(path)
+    Rails.application.routes.recognize_path(path)
+    true
+  rescue ActionController::RoutingError
+    false
+  end
 end

@@ -1,0 +1,43 @@
+{
+  "time": 1729984476238,
+  "blocks": [
+    {
+      "id": "aEn35crabY",
+      "type": "header",
+      "data": {
+        "text": "Awards:",
+        "level": 2
+      }
+    },
+    {
+      "id": "IAKJGfIHro",
+      "type": "paragraph",
+      "data": {
+        "text": "<b>Boilermaker Regional</b> - Gracious Professionalism&nbsp;"
+      }
+    },
+    {
+      "id": "a5AZTnHEAi",
+      "type": "paragraph",
+      "data": {
+        "text": "<b>Washington DC Regional</b> - Regional Chairman’s Award"
+      }
+    },
+    {
+      "id": "uO9QYSsUnm",
+      "type": "header",
+      "data": {
+        "text": "Summary:",
+        "level": 2
+      }
+    },
+    {
+      "id": "XSJD-OcSCT",
+      "type": "paragraph",
+      "data": {
+        "text": "In 2012, Team 461 enthusiastically tackled the challenges inherent to the season. Their journey commenced at the Boilermaker Regional, where their ethos and commitment to assisting others earned them the esteemed Gracious Professionalism award. This dedication persisted at the Washington D.C. Regional, where they were distinguished with the prestigious Regional Chairman's Award. Venturing to the pinnacle of competition, the World Championship in St. Louis, they vied in the Curie Division, showcasing their competitive prowess on a global stage. The culmination of their season took place at the Indiana Robotics Invitational, marking a conclusion to a year marked by perseverance and excellence."
+      }
+    }
+  ],
+  "version": "2.30.6"
+}

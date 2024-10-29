@@ -5,46 +5,47 @@
 <%= render partial: 'dashboard_header' %>
 
 <div class="row">
-  <div class="col-md-4">
+  <div class="d-flex flex-column col-md-4 mb-3">
     <div class="card h-100">
       <div class="card-header">
         <h3 class="text-center">Pages</h3>
       </div>
-      <div class="card-body">
+      <div class="card-body d-flex flex-column">
         <div class="row">
-          <% Page.all.order(title: :asc).first(3).each do |page| %>
-            <div class="col-md-4">
+          <% Page.all.order(id: :desc).first(2).each do |page| %>
+            <div class="col-md-6 mb-3">
               <%= render page %>
             </div>
           <% end %>
-          <% if Page.count - 3 > 0 %>
-            <p>... and <%= Page.count - 3 %> more</p>
-          <% end %>
         </div>
+        <% if Page.count - 2 > 0 %>
+          <p>... and <%= Page.count - 2 %> more</p>
+        <% end %>
       </div>
       <div class="card-footer">
         <div class="card-footer-btn-group">
+          <%= link_to 'New page', new_page_path, class: 'btn' %>
           <%= link_to 'View All Pages', pages_path, class: 'btn' %>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="d-flex flex-column col-md-4 mb-3">
     <div class="card h-100">
       <div class="card-header">
         <h3 class="text-center">Assets</h3>
       </div>
-      <div class="card-body">
+      <div class="card-body d-flex flex-column">
         <div class="row">
-          <% PageAsset.all.order(id: :asc).first(3).each do |page_asset| %>
-            <div class="col-md-4">
+          <% PageAsset.all.order(id: :desc).first(2).each do |page_asset| %>
+            <div class="col-md-6 mb-3">
               <%= render page_asset %>
             </div>
           <% end %>
-          <% if PageAsset.count - 3 > 0 %>
-            <p>... and <%= PageAsset.count - 3 %> more</p>
-          <% end %>
         </div>
+        <% if PageAsset.count - 2 > 0 %>
+          <p>... and <%= PageAsset.count - 2 %> more</p>
+        <% end %>
       </div>
       <div class="card-footer">
         <div class="card-footer-btn-group">
@@ -53,18 +54,18 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="d-flex flex-column col-md-4 mb-3">
     <div class="card h-100">
       <div class="card-header">
         <h3 class="text-center">Recent Activities</h3>
       </div>
-      <div class="card-body">
+      <div class="card-body d-flex flex-column">
         <h1 class="text-center">SOON&TRADE;</h1>
       </div>
     </div>
   </div>
 </div>
 
-<div class="my-3">
+<div>
   <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-cardlike w-100" %>
 </div>
