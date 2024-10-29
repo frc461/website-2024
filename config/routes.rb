@@ -13,10 +13,17 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "welcome#index"
+
   get "about_us", to: "welcome#about"
   get "history", to: "welcome#history"
   get "news", to: "welcome#news"
   get "resources", to: "welcome#resources"
+
+  # Errors routes
+  match "/404", to: "errors#not_found", via: :all
+  match "/418", to: "errors#teapot", via: :all
+  match "/422", to: "errors#unprocessable_content", via: :all
+  match "/500", to: "errors#internal_server", via: :all
 
   resources :dashboard, only: :index do
     get :settings, on: :collection
