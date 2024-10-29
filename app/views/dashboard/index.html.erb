@@ -42,10 +42,10 @@
               <%= render page_asset %>
             </div>
           <% end %>
-          <% if PageAsset.count - 2 > 0 %>
-            <p>... and <%= PageAsset.count - 2 %> more</p>
-          <% end %>
         </div>
+        <% if PageAsset.count - 2 > 0 %>
+          <p>... and <%= PageAsset.count - 2 %> more</p>
+        <% end %>
       </div>
       <div class="card-footer">
         <div class="card-footer-btn-group">
