@@ -1,3 +1,19 @@
 <%= content_for :title do %>
   Unprocessable Content
 <% end %>
+
+<div class="d-flex justify-content-center">
+  <div class="card">
+    <div class="card-body text-center">
+      <h1>Unprocessable Content</h1>
+      <h4>The change you wanted was rejected</h4>
+      <p>Maybe you changed something you weren&apos;t supposed to.</p>
+      <p>If you are the application owner, check the logs for more information.</p>
+    </div>
+    <div class="card-footer">
+      <div class="card-footer-btn-group">
+        <%= link_to "Back", :back, class: "btn" %>
+      </div>
+    </div>
+  </div>
+</div>
