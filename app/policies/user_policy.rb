@@ -8,7 +8,7 @@ class UserPolicy < ApplicationPolicy
   class Scope < ApplicationPolicy::Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      unless user.nil?
+      if user
         scope.all
       else
         scope.none
