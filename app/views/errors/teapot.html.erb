@@ -1,3 +1,19 @@
 <%= content_for :title do %>
   I'm a teapot
 <% end %>
+
+<div class="d-flex justify-content-center">
+  <div class="card">
+    <div class="card-body text-center">
+      <h1>I&apos;m a teapot</h1>
+      <p>I refuse to brew coffee because I am a teapot.</p>
+      <%= image_tag "errors/wabi_tea.png", height: "300px" %>
+      <h4>Wabi seems to be enjoying his tea though.</h4>
+    </div>
+    <div class="card-footer">
+      <div class="card-footer-btn-group">
+        <%= link_to "Back", :back, class: "btn" %>
+      </div>
+    </div>
+  </div>
+</div>
