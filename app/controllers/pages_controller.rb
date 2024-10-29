@@ -66,6 +66,9 @@ class PagesController < ApplicationController
         @page = authorize policy_scope(@page_category.pages).friendly.find(params[:page_id])
       else
         @page = authorize policy_scope(Page).friendly.find(params[:id])
+        if @page.page_category_id
+          @page_category = authorize policy_scope(PageCategory).friendly.find(@page.page_category_id)
+        end
       end
     end
 
