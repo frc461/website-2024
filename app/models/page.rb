@@ -4,6 +4,9 @@ class Page < ApplicationRecord
   has_many :page_assets, dependent: :destroy
   belongs_to :page_category, optional: true
 
+  validates_presence_of :title
+  validates_uniqueness_of :title
+
   def self.ransackable_attributes(auth_object = nil)
     [ 'html_cache', 'title' ]
   end

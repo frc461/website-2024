@@ -82,6 +82,6 @@ test:
 production:
   <<: *default
   host: localhost
-  username: frc461_website_2024
-  password: robotics
-  database: frc461_website_2024_production
+  username: apps
+  password: apps123
+  database: website_production
