@@ -1,0 +1,21 @@
+<%= simple_form_for(@user) do |f| %>
+  <div class="card">
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="card-body">
+      <%= f.input :name %>
+      <%= f.input :email, input_html: { autocomplete: "email" }%>
+      <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation, input_html: { autocomplete: "new-password" } %>
+      <%= f.input :admin %>
+    </div>
+
+    <div class="card-footer">
+      <div class="card-footer-btn-group">
+        <%= f.button :submit %>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+<% end %>

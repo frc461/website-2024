@@ -5,6 +5,8 @@
     </h4>
   </div>
   <div class="card-footer text-center">
-    Admin: <%= user.admin? %>
+    <div class="card-footer-btn-group">
+      <%= link_to "Show this user", user, class: "btn" %>
+    </div>
   </div>
 </div>

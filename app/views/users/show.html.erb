@@ -1,2 +1,21 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= content_for :title do %>
+  User • <%= @user.name %>
+<% end %>
+
+<div class="card">
+  <div class="card-header text-center">
+    <h1><%= @user.name %></h1>
+  </div>
+  <div class="card-body">
+    <div class="col col-md-6 mx-auto">
+      <h2>Basic Information</h2>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="card-footer-btn-group">
+      <%= link_to "Back to users", users_path, class: "btn" %>
+      <%= link_to "Edit user", edit_user_path(@user), class: "btn" %>
+      <%= link_to "Destroy user", @user, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn' %>
+    </div>
+  </div>
+</div>
