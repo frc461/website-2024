@@ -15,4 +15,12 @@ class UserPolicy < ApplicationPolicy
       end
     end
   end
+
+  def create?
+    user&.admin
+  end
+
+  def update?
+    user&.admin
+  end
 end
