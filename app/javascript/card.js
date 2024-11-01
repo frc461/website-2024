@@ -1,4 +1,4 @@
-import { NestedEditor } from "./nesting";
+import { NestedEditor } from "nesting";
 
 export class Card {
     static get toolbox() {
