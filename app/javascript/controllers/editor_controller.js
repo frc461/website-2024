@@ -10,7 +10,7 @@ import Underline from "@editorjs/underline"
 import ImageTool from "@editorjs/image"
 import Alert from "editorjs-alert"
 
-import { Card } from "../card";
+import { Card } from "card"
 
 // Connects to data-controller="editor"
 export default class extends Controller {
