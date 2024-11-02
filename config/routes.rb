@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  resources :page_assets, only: %i[ index show destroy ] do
-    post :upload_image, on: :collection
-  end
-  get "search", to: "search#index"
-  devise_for :users, controllers: { registrations: 'users/registrations' }
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -29,8 +23,16 @@ Rails.application.routes.draw do
     get :settings, on: :collection
   end
 
+  get "search", to: "search#index"
+  devise_for :users
+  resources :users
+
   # HACK: extremely hacky way of routing, do not touch unless you want to experience lots of pain
   resources :pages
+  resources :page_assets, only: %i[ index show destroy ] do
+    post :upload_image, on: :collection
+  end
+
   resources :page_categories
   resources :page_categories, only: :none, path: "/" do
     get ":page_id", to: "pages#show", as: :page, on: :member

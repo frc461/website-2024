@@ -4,7 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
 
+  validates_presence_of :name
+
   def self.ransackable_attributes(auth_object = nil)
     [ 'name', 'email' ]
+  end
+
+  def password_required?
+    new_record?
   end
 end

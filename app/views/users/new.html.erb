@@ -1,0 +1,13 @@
+<%= content_for :title do %>
+  New User
+<% end %>
+
+<div class="card">
+  <div class="card-body">
+    <h1 class="text-center">New User</h1>
+  </div>
+</div>
+
+<%= render "form", user: @user do %>
+  <%= link_to "Discard changes", users_path, data: { turbo_method: :get, turbo_confirm: 'Are you sure?' }, class: 'btn' %>
+<% end %>

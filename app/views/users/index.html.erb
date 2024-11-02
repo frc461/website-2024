@@ -1,0 +1,22 @@
+<%= content_for :title do %>
+  All Users
+<% end %>
+
+<div class="card">
+  <div class="card-body">
+    <h1 class="text-center">Users</h1>
+  </div>
+</div>
+
+<div class="row">
+  <% @users.each do |user| %>
+    <div class="col-md-4 mb-3">
+      <%= render user %>
+    </div>
+  <% end %>
+</div>
+
+<% if current_user %>
+  <%= link_to "New user", new_user_path, class: "btn btn-cardlike w-100" %>
+  <%= link_to "Back to Dashboard", settings_dashboard_index_path, class: "btn btn-cardlike w-100 my-2" %>
+<% end %>

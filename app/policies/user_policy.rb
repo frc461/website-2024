@@ -15,4 +15,16 @@ class UserPolicy < ApplicationPolicy
       end
     end
   end
+
+  def create?
+    user&.admin
+  end
+
+  def update?
+    user&.admin
+  end
+
+  def destroy?
+    user&.admin && user != record
+  end
 end
