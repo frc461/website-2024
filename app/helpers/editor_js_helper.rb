@@ -31,7 +31,7 @@ module EditorJsHelper
   def list_html(data, list_style)
     items = data['items'].map do |item|
       inner_list = ''
-      unless item['items'].empty?
+      if item['items']
         inner_list = list_html item, list_style
       end
       "<li>#{item['content']}#{inner_list}</li>"
@@ -66,7 +66,7 @@ module EditorJsHelper
   def image_html(data)
     <<-HTML
     <figure class="figure">
-       <img src="#{data['file']['url']}" style="max-width: 100%" alt="#{data['caption']}">
+       <img src="#{data['file']['url']}" alt="#{data['caption']}">
        <figcaption class="figure-caption">#{data['caption']}</figcaption>
      </figure>
     HTML
