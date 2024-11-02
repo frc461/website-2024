@@ -23,4 +23,8 @@ class UserPolicy < ApplicationPolicy
   def update?
     user&.admin
   end
+
+  def destroy?
+    user&.admin && user != record
+  end
 end
