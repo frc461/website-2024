@@ -6,8 +6,7 @@
     <div class="card-body">
       <%= f.input :name %>
       <%= f.input :email, input_html: { autocomplete: "email" }%>
-      <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation, input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: "Password (Note: changing this field will sign you out if you are logged in as this user)" %>
       <%= f.input :admin %>
     </div>
 
