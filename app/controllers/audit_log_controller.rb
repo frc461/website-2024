@@ -20,7 +20,7 @@ class AuditLogController < ApplicationController
   end
 
   def revert
-    @log.reify.save
+    @log.reify&.save
 
     respond_to do |format|
       format.html { redirect_to audit_log_index_url, notice: "Successfully reverted to version #{@log.created_at}." }
