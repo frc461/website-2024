@@ -13,4 +13,5 @@
       <b>Record</b>: <%= version.object ? PaperTrail.serializer.load(version.object)["title"] : PaperTrail.serializer.load(version.object_changes)["title"][1] %>
     </div>
   </div>
+  <%= yield %>
 </div>

@@ -2,7 +2,7 @@
   Audit Log
 <% end %>
 
-<%= render partial: 'dashboard_header' %>
+<%= render partial: 'dashboard/dashboard_header' %>
 
 <% if @logs.length == 0 %>
   <div class="card">
@@ -13,5 +13,11 @@
 <% end %>
 
 <% @logs.order(created_at: :desc).each do |log| %>
-  <%= render log %>
+  <%= render log do %>
+    <div class="card-footer">
+      <div class="card-footer-btn-group">
+        <%= link_to 'View Log', audit_log_path(log.id), class: 'btn' %>
+      </div>
+    </div>
+  <% end %>
 <% end %>

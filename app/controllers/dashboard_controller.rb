@@ -6,8 +6,4 @@ class DashboardController < ApplicationController
 
   def settings
   end
-
-  def audit_log
-    @logs = PaperTrail::Version.all
-  end
 end
