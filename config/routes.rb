@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   resources :dashboard, only: :index do
     collection do
       get :settings
-      resources :audit_log, only: %i[ index show destroy ]
+      resources :audit_log, only: %i[ index show destroy ] do
+        post "revert", to: "audit_log#revert", on: :member
+      end
     end
   end
 

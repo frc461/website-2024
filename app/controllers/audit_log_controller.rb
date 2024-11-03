@@ -1,7 +1,7 @@
 class AuditLogController < ApplicationController
   before_action :check_for_user
-  before_action :check_for_admin, only: :destroy
-  before_action :set_log, only: %i[ show destroy ]
+  before_action :check_for_admin, only: %i[ destroy revert ]
+  before_action :set_log, only: %i[ show destroy revert ]
 
   def index
     @logs = PaperTrail::Version.all
@@ -14,7 +14,16 @@ class AuditLogController < ApplicationController
     @log.destroy!
 
     respond_to do |format|
-      format.html { redirect_to pages_url, notice: "Log was successfully destroyed." }
+      format.html { redirect_to audit_log_index_url, notice: "Log was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
+  def revert
+    @log.reify.save
+
+    respond_to do |format|
+      format.html { redirect_to audit_log_index_url, notice: "Successfully reverted to version #{@log.created_at}." }
       format.json { head :no_content }
     end
   end
