@@ -1,6 +1,6 @@
 class PageCategory < ApplicationRecord
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: %i[slugged history]
   has_many :pages, dependent: :destroy
 
   validates_presence_of :name

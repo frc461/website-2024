@@ -1,6 +1,6 @@
 class Page < ApplicationRecord
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title, use: %i[slugged history]
   has_many :page_assets, dependent: :destroy
   belongs_to :page_category, optional: true
 
