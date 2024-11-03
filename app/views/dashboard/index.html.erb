@@ -60,7 +60,18 @@
         <h3 class="text-center">Recent Activities</h3>
       </div>
       <div class="card-body d-flex flex-column">
-        <h1 class="text-center">SOON&TRADE;</h1>
+        <div class="row">
+          <% PaperTrail::Version.all.order(created_at: :desc).first(2).each do |version| %>
+            <div class="d-flex flex-column col-md-6 mb-3">
+              <%= render version %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-footer-btn-group">
+          <%= link_to 'View All Logs', audit_log_dashboard_index_path, class: 'btn' %>
+        </div>
       </div>
     </div>
   </div>

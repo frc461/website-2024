@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: :index do
     get :settings, on: :collection
+    get :audit_log, on: :collection
   end
 
   get "search", to: "search#index"

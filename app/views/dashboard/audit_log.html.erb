@@ -1,0 +1,17 @@
+<%= content_for :title do %>
+  Audit Log
+<% end %>
+
+<%= render partial: 'dashboard_header' %>
+
+<% if @logs.length == 0 %>
+  <div class="card">
+    <div class="card-body">
+      <h2 class="text-center">There are no logs available!</h2>
+    </div>
+  </div>
+<% end %>
+
+<% @logs.order(created_at: :desc).each do |log| %>
+  <%= render log %>
+<% end %>
