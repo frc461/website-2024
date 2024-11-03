@@ -1,5 +1,7 @@
 class Page < ApplicationRecord
   extend FriendlyId
+  has_paper_trail
+
   friendly_id :title, use: :slugged
   has_many :page_assets, dependent: :destroy
   belongs_to :page_category, optional: true
