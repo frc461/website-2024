@@ -16,7 +16,8 @@
   <%= render log do %>
     <div class="card-footer">
       <div class="card-footer-btn-group">
-        <%= link_to 'View Log', audit_log_path(log.id), class: 'btn' %>
+        <%= link_to 'View log', audit_log_path(log.id), class: 'btn' %>
+        <%= link_to 'Destroy this log', audit_log_path(log.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn' %>
       </div>
     </div>
   <% end %>
