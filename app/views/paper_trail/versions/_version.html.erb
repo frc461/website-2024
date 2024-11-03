@@ -7,11 +7,16 @@
       <b>Event</b>: <%= version.event %>
     </div>
     <div>
-      <b>User</b>: <%= User.find(version.whodunnit).name %>
+      <b>Whodunnit</b>: <%= User.find(version.whodunnit).name %>
     </div>
     <div>
-      <b>Record</b>: <%= version.object ? PaperTrail.serializer.load(version.object)["title"] : PaperTrail.serializer.load(version.object_changes)["title"][1] %>
+      <b>Model</b>: <%= version.item_type %>
     </div>
+    <% if version.item_type == "Page" %>
+      <div>
+        <b>Record</b>: <%= version.object ? PaperTrail.serializer.load(version.object)["title"] : PaperTrail.serializer.load(version.object_changes)["title"][1] %>
+      </div>
+    <% end %>
   </div>
   <%= yield %>
 </div>
