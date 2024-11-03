@@ -1,6 +1,6 @@
 class Page < ApplicationRecord
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title, use: %i[slugged history]
   has_many :page_assets, dependent: :destroy
   belongs_to :page_category, optional: true
 
@@ -13,5 +13,9 @@ class Page < ApplicationRecord
 
   def self.ransackable_associations(auth_object = nil)
     [ 'page_assets' ]
+  end
+
+  def should_generate_new_friendly_id?
+    title_changed?
   end
 end
