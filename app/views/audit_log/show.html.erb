@@ -2,4 +2,87 @@
   View Log • <%= @log.created_at %>
 <% end %>
 
+<div class="card">
+  <div class="card-body">
+    <h1 class="text-center"><%= @log.created_at %></h1>
+  </div>
+</div>
 
+<div class="card">
+  <div class="card-body">
+    <h2>Basic Information</h2>
+    <div>
+      <b>Event</b>: <%= @log.event %>
+    </div>
+    <div>
+      <b>User</b>: <%= User.find(@log.whodunnit).name %>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h2>Changes</h2>
+    <table class="table table-striped-column">
+      <thead>
+        <tr>
+          <th scope="col">Attribute</th>
+          <th scope="col">Before</th>
+          <th scope="col">After</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% PaperTrail.serializer.load(@log.object_changes).each do |key, value| %>
+          <tr>
+            <th scope="row">
+              <%= key %>
+            </th>
+            <td>
+              <% if value[0].nil? %>
+                <i>nil</i>
+              <% else %>
+                <%= value[0] %>
+              <% end %>
+            </td>
+            <td>
+              <% if value[1].nil? %>
+                <i>nil</i>
+              <% else %>
+                <%= value[1] %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<% if @log.item_type == "Page" %>
+  <div class="card">
+    <div class="card-header">
+      <h2 class="text-center">Content Before</h2>
+    </div>
+    <div class="card-body">
+      <div class="col col-md-6 mx-auto">
+        <%= PaperTrail.serializer.load(@log.object_changes)["html_cache"][0]&.html_safe || "" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="text-center">Content After</h2>
+    </div>
+    <div class="card-body">
+      <div class="col col-md-6 mx-auto">
+        <%= PaperTrail.serializer.load(@log.object_changes)["html_cache"][1]&.html_safe || "" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% if current_user %>
+  <%= link_to "Destroy this log", audit_log_path(@log), class: "btn btn-cardlike w-100 my-2" %>
+  <%= link_to "Back to audit log", audit_log_index_path, class: "btn btn-cardlike w-100 my-2" %>
+<% end %>
