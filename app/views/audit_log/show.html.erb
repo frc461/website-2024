@@ -15,7 +15,7 @@
       <b>Event</b>: <%= @log.event %>
     </div>
     <div>
-      <b>Whodunnit</b>: <%= User.find(@log.whodunnit).name %>
+      <b>Whodunnit</b>: <%= User.find_by_id(@log.whodunnit)&.name %>
     </div>
   </div>
   <div class="card-footer">
