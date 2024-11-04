@@ -18,6 +18,13 @@
       <b>Whodunnit</b>: <%= User.find(@log.whodunnit).name %>
     </div>
   </div>
+  <div class="card-footer">
+    <div class="card-footer-btn-group">
+      <%= link_to "Revert this change", revert_audit_log_path(@log), data: { turbo_method: :post, turbo_confirm: 'Are you sure?' }, class: "btn" %>
+      <%= link_to "Destroy this log", audit_log_path(@log), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn" %>
+      <%= link_to "Back to audit log", audit_log_index_path, class: "btn" %>
+    </div>
+  </div>
 </div>
 
 <% if current_user %>
