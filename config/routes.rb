@@ -20,7 +20,12 @@ Rails.application.routes.draw do
   match "/500", to: "errors#internal_server", via: :all
 
   resources :dashboard, only: :index do
-    get :settings, on: :collection
+    collection do
+      get :settings
+      resources :audit_log, only: %i[ index show destroy ] do
+        post "revert", to: "audit_log#revert", on: :member
+      end
+    end
   end
 
   get "search", to: "search#index"

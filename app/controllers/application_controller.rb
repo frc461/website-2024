@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
 
+  before_action :set_paper_trail_whodunnit
+
   def after_sign_in_path_for(resource)
     dashboard_index_path
   end

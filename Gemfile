@@ -77,3 +77,5 @@ gem 'friendly_id', '~> 5.5.0'
 gem "pundit", "~> 2.4"
 
 gem "ransack", "~> 4.2"
+
+gem "paper_trail", "~> 15.2"
