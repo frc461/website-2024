@@ -11,6 +11,7 @@
 <div class="card">
   <div class="card-body">
     <h2>Basic Information</h2>
+    <p>Log created <%= time_ago_in_words(@log.created_at.to_time, include_seconds: true) %> ago</p>
     <div>
       <b>Event</b>: <%= @log.event %>
     </div>
