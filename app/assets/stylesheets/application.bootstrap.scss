@@ -85,6 +85,7 @@ main {
 }
 
 .btn-cardlike {
+  @extend .mb-3;
   border-radius: #{$card-border-radius};
   border-width: #{$card-border-width};
   --#{$prefix}btn-bg: #{$card-bg};
@@ -100,6 +101,7 @@ main {
   @extend .btn-cardlike;
   border-width: 0;
   border-radius: 0;
+  margin-bottom: 0!important;
 }
 
 .card-footer-btn-group > :not(.btn:first-child) {
@@ -129,4 +131,8 @@ main {
 
 img {
   max-width: 100%;
+}
+
+.sponsor-image {
+  max-height: 64px;
 }
