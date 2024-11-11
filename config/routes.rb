@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   resources :page_assets, only: %i[ index show destroy ] do
     post :upload_image, on: :collection
   end
+  resources :page_templates
 
   resources :page_categories
   resources :page_categories, only: :none, path: "/" do
