@@ -1,10 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<%= content_for :title do %>
+  Page Template • <%= @page_template.name %>
+<% end %>
 
-<%= render @page_template %>
-
-<div>
-  <%= link_to "Edit this page template", edit_page_template_path(@page_template) %> |
-  <%= link_to "Back to page templates", page_templates_path %>
-
-  <%= button_to "Destroy this page template", @page_template, method: :delete %>
+<div class="card">
+  <div class="card-header">
+    <h1 class="text-center">
+      <%= @page_template.name %>
+    </h1>
+  </div>
+  <div class="card-body">
+    <div class="col col-md-6 mx-auto">
+      <%= render_content(@page_template.template) %>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="card-footer-btn-group">
+      <% if current_user %>
+        <%= link_to "Edit page template", edit_page_template_path(@page_template), class: "btn" %>
+        <%= link_to "Back to page templates", page_templates_path, class: "btn" %>
+      <% end %>
+    </div>
+  </div>
 </div>

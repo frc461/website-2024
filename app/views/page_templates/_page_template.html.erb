@@ -1,12 +1,12 @@
-<div id="<%= dom_id page_template %>">
-  <p>
-    <strong>Name:</strong>
-    <%= page_template.name %>
-  </p>
-
-  <p>
-    <strong>Template:</strong>
-    <%= page_template.template %>
-  </p>
-
+<div class="card h-100">
+  <div class="card-body text-center d-flex justify-content-center align-items-center">
+    <h4><%= page_template.name %></h4>
+  </div>
+  <div class="card-footer">
+    <div class="card-footer-btn-group">
+      <%= link_to "Show this page template", page_template_path(page_template), class: 'btn' %>
+      <%= link_to "Edit this page template", edit_page_template_path(page_template), class: 'btn' %>
+      <%= link_to "Destroy this page template", page_template, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn' %>
+    </div>
+  </div>
 </div>
