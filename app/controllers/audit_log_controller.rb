@@ -8,6 +8,7 @@ class AuditLogController < ApplicationController
   end
 
   def show
+    @log_hash = PaperTrail.serializer.load(@log.object_changes)
   end
 
   def destroy
