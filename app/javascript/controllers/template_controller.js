@@ -9,6 +9,17 @@ export default class extends Controller {
   }
 
   update() {
+    if (isNaN(Number(this.templateIdTarget.value))) {
+      this.update_editor("{\"blocks\":[]}")
+      return
+    }
+
+    if (!this.templateIdTarget[0].value) {
+      this.templateIdTarget[0].value = "og"
+      this.templateIdTarget[0].label = "<Original Content>"
+      // TODO: somehow get the saved data
+    }
+
     if (this.templateIdTarget.value) {
       fetch(`/page_templates/${this.templateIdTarget.value}/json`)
             .then((response) => response.json())
