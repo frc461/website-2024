@@ -7,7 +7,7 @@
     <div class="card-body">
       <%= f.input :page_category_id, label: "Page Category (Optional)", as: :select, collection: PageCategory.all %>
       <%= simple_fields_for :no_model_fields do |n| %>
-        <%= n.input :template_id, label: "Template (Optional)", as: :select, collection: PageTemplate.all, input_html: { "data-template-target": "templateId", "data-action": "input->template#update:editor#update" } %>
+        <%= n.input :template_id, label: "Template (Optional)", as: :select, collection: PageTemplate.all, input_html: { "data-template-target": "templateId", "data-action": "input->template#update" } %>
       <% end %>
       <%= f.hidden_field :content, id: "content_hidden" %>
       <%= f.label "Page Content", class: "form-label optional" %>
