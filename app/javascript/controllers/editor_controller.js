@@ -82,4 +82,8 @@ export default class extends Controller {
     this.content_field.value = JSON.stringify(data)
     this.element.submit()
   }
+
+  update({ detail: { content } }) {
+    this.editor.render(JSON.parse(content))
+  }
 }

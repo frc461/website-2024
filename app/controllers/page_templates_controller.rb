@@ -1,6 +1,6 @@
 class PageTemplatesController < ApplicationController
   before_action :check_for_admin
-  before_action :set_page_template, only: %i[ show edit update destroy ]
+  before_action :set_page_template, only: %i[ show edit update destroy json ]
 
   # GET /page_templates or /page_templates.json
   def index
@@ -56,6 +56,10 @@ class PageTemplatesController < ApplicationController
       format.html { redirect_to page_templates_url, notice: "Page template was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def json
+    render :json => @page_template
   end
 
   private
