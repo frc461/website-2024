@@ -83,7 +83,13 @@ export default class extends Controller {
     this.element.submit()
   }
 
-  update({ detail: { content } }) {
+  async update({ detail: { content, save_original, load_original } }) {
+    if (save_original) { this.original_data = await this.editor.save() }
+    if (load_original) {
+      this.editor.render(this.original_data)
+      return
+    }
+
     this.editor.render(JSON.parse(content))
   }
 }
