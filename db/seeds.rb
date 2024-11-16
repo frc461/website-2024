@@ -25,4 +25,15 @@ Dir["db/seeds_json/*/*"].each do |file|
       page_category_id: PageCategory.friendly.find(name[0]).id
     )
   end
+  next
+end
+
+Dir["db/templates_json/*"].each do |file|
+  name = file.delete_prefix("db/templates_json/").chomp(".json")
+  unless PageTemplate.find_by_name(name)
+    PageTemplate.create!(
+      name: name,
+      template: File.read(file)
+    )
+  end
 end
