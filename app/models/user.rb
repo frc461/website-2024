@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates_presence_of :name
 
   def self.ransackable_attributes(auth_object = nil)
-    [ 'name', 'email' ]
+    [ "name", "email" ]
   end
 
   def password_required?
