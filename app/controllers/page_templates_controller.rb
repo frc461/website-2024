@@ -63,7 +63,7 @@ class PageTemplatesController < ApplicationController
   end
 
   def json
-    render :json => @page_template
+    render json: @page_template
   end
 
   private
