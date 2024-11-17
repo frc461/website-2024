@@ -1,0 +1,18 @@
+glob: "app/**/*.{html,text,js}{+*,}.erb"
+exclude:
+  - '**/vendor/**/*'
+  - '**/node_modules/**/*'
+  - 'lib/**/*'
+EnableDefaultLinters: true
+linters:
+  ErbSafety:
+    enabled: true
+  Rubocop:
+    enabled: true
+    rubocop_config:
+      inherit_from:
+        - .rubocop.yml
+  SelfClosingTag:
+    enabled: false
+  NoJavascriptTagHelper:
+    enabled: false
