@@ -48,7 +48,9 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
-  gem 'rubocop-rails-omakase', require: false
+  gem "rubocop", require: false
+  gem "rubocop-rails-omakase", require: false
+  gem "erb_lint", require: false
 end
 
 group :development do
@@ -72,7 +74,7 @@ gem "devise", "~> 4.9"
 
 gem "simple_form", "~> 5.3"
 
-gem 'friendly_id', '~> 5.5.0'
+gem "friendly_id", "~> 5.5.0"
 
 gem "pundit", "~> 2.4"
 

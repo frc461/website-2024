@@ -1,37 +1,37 @@
 module EditorJsHelper
   def block_as_html(block)
-    data = block['data']
-    case block['type']
-    when 'paragraph'
+    data = block["data"]
+    case block["type"]
+    when "paragraph"
       "<p>#{data['text']}</p>"
-    when 'header'
-      level = data['level']
+    when "header"
+      level = data["level"]
       "<h#{level}>#{data['text']}</h#{level}>"
-    when 'list'
-      list_html data, data['style'] == 'ordered' ? 'ol' : 'ul'
-    when 'quote'
+    when "list"
+      list_html data, data["style"] == "ordered" ? "ol" : "ul"
+    when "quote"
       quote_html data
-    when 'delimiter'
+    when "delimiter"
       '<div class="ce-delimiter cdx-block"></div>'
-    when 'table'
+    when "table"
       table_html data
-    when 'alert'
+    when "alert"
       alert_html data
-    when 'image'
+    when "image"
       image_html data
-    when 'card'
+    when "card"
       card_html data
     else
-      ''
+      ""
     end
   end
 
   private
 
   def list_html(data, list_style)
-    items = data['items'].map do |item|
-      inner_list = ''
-      if item['items']
+    items = data["items"].map do |item|
+      inner_list = ""
+      if item["items"]
         inner_list = list_html item, list_style
       end
       "<li>#{item['content']}#{inner_list}</li>"
@@ -40,7 +40,7 @@ module EditorJsHelper
   end
 
   def table_html(data)
-    table = data['content'].map do |item|
+    table = data["content"].map do |item|
       inner = item.map do |i|
         "<td>#{i}</td>"
       end.join
@@ -50,7 +50,7 @@ module EditorJsHelper
   end
 
   def quote_html(data)
-    alignment = get_alignment_class data['alignment']
+    alignment = get_alignment_class data["alignment"]
     <<-HTML
     <figure class="text-#{alignment}>
        <blockquote class=blockquote>
@@ -73,7 +73,7 @@ module EditorJsHelper
   end
 
   def alert_html(data)
-    alignment = get_alignment_class data['align']
+    alignment = get_alignment_class data["align"]
     "<div class=\"alert alert-#{data['type']} text-#{alignment}\">#{data['message']}</div>"
   end
 
@@ -88,17 +88,17 @@ module EditorJsHelper
   end
 
   def card_part(data, part)
-    html = data[part]['blocks'].map do |block|
+    html = data[part]["blocks"].map do |block|
       block_as_html block
     end.join.html_safe
     "<div class='card-#{part}'>#{html}</div>"
   end
 
   def get_alignment_class(align)
-    if align == 'left'
-      'start'
-    elsif align == 'right'
-      'end'
+    if align == "left"
+      "start"
+    elsif align == "right"
+      "end"
     else
       align
     end

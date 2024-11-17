@@ -10,11 +10,11 @@ class Page < ApplicationRecord
   validates_uniqueness_of :title
 
   def self.ransackable_attributes(auth_object = nil)
-    [ 'html_cache', 'title' ]
+    [ "html_cache", "title" ]
   end
 
   def self.ransackable_associations(auth_object = nil)
-    [ 'page_assets' ]
+    [ "page_assets" ]
   end
 
   def should_generate_new_friendly_id?
