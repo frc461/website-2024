@@ -18,3 +18,10 @@ bundle install
 docker-compose up
 bin/dev
 ```
+
+## Linting and Formatting
+
+```bash
+rubocop -A
+erb_lint --lint-all -a
+```

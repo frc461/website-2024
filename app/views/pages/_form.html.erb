@@ -3,7 +3,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="card">
-    <%= f.input :title, label: false, wrapper: false, placeholder: 'Page Title', input_html: {class: 'card-header fs-1 m-0 border-0 border-bottom text-center'} %>
+    <%= f.input :title, label: false, wrapper: false, placeholder: "Page Title", input_html: {class: "card-header fs-1 m-0 border-0 border-bottom text-center"} %>
     <div class="card-body">
       <%= f.input :page_category_id, label: "Page Category (Optional)", as: :select, collection: PageCategory.all %>
       <%= simple_fields_for :no_model_fields do |n| %>

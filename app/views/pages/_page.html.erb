@@ -1,12 +1,12 @@
 <div class="card h-100">
   <div class="card-body text-center d-flex justify-content-center align-items-center">
-    <% if page.draft %><span class="badge rounded-pill text-bg-primary position-absolute top-0 start-0 m-2">Draft</span><% end %> 
+    <% if page.draft %><span class="badge rounded-pill text-bg-primary position-absolute top-0 start-0 m-2">Draft</span><% end %>
     <h4 class="overflow-hidden"><%= page.title %></h4>
   </div>
   <div class="card-footer">
     <div class="card-footer-btn-group">
       <% if page.page_category_id.nil? || current_page?(dashboard_index_path) || current_page?(pages_path) %>
-        <%= link_to 'Show this page', page, class: 'btn' %>
+        <%= link_to "Show this page", page, class: "btn" %>
       <% end %>
       <%= yield %>
     </div>

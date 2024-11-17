@@ -24,7 +24,7 @@
       </h5>
       <%= render result do %>
         <% if result.class.name == 'Page' && result.page_category_id %>
-          <%= link_to 'Show this page', page_page_category_path(PageCategory.friendly.find(result.page_category_id).slug, result.slug), class: 'btn' %>
+          <%= link_to "Show this page", page_page_category_path(PageCategory.friendly.find(result.page_category_id).slug, result.slug), class: "btn" %>
         <% end %>
       <% end %>
     </div>

@@ -9,5 +9,5 @@
 </div>
 
 <%= render "form", user: @user do %>
-  <%= link_to "Discard changes", @user, data: { turbo_method: :get, turbo_confirm: 'Are you sure?' }, class: 'btn' %>
+  <%= link_to "Discard changes", @user, data: { turbo_method: :get, turbo_confirm: "Are you sure?" }, class: "btn" %>
 <% end %>
