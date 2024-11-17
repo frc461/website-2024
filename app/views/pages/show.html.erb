@@ -4,7 +4,7 @@
 
 <div class="card">
   <div class="card-header text-center">
-    <% if @page.draft %><span class="badge rounded-pill text-bg-primary float-start mt-2">Draft</span><% end %> 
+    <% if @page.draft %><span class="badge rounded-pill text-bg-primary float-start mt-2">Draft</span><% end %>
     <h1 class="text-wrap"><%= @page.title %></h1>
   </div>
   <div class="card-body">
@@ -19,14 +19,14 @@
   <div class="card-footer">
     <div class="card-footer-btn-group">
       <% if @page_category && path_exists?("/#{@page_category.slug}") %>
-        <%= link_to "Back to #{@page_category.name}", "/#{@page_category.slug}", class: 'btn' %>
+        <%= link_to "Back to #{@page_category.name}", "/#{@page_category.slug}", class: "btn" %>
       <% else %>
-        <%= link_to "Back", :back, class: 'btn' %>
+        <%= link_to "Back", :back, class: "btn" %>
       <% end %>
       <% if current_user %>
-        <%= link_to "Back to pages", pages_path, class: 'btn' %>
-        <%= link_to "Edit this page", edit_page_path(@page), class: 'btn' %>
-        <%= link_to "Destroy this page", @page, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn' %>
+        <%= link_to "Back to pages", pages_path, class: "btn" %>
+        <%= link_to "Edit this page", edit_page_path(@page), class: "btn" %>
+        <%= link_to "Destroy this page", @page, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn" %>
       <% end %>
     </div>
   </div>

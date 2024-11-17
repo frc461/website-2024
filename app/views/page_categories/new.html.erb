@@ -9,5 +9,5 @@
 </div>
 
 <%= render "form", page_category: @page_category do %>
-  <%= link_to "Discard changes", page_categories_path, data: { turbo_method: :get, turbo_confirm: 'Are you sure?' }, class: 'btn' %>
+  <%= link_to "Discard changes", page_categories_path, data: { turbo_method: :get, turbo_confirm: "Are you sure?" }, class: "btn" %>
 <% end %>

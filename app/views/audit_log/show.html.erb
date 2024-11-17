@@ -20,16 +20,12 @@
   </div>
   <div class="card-footer">
     <div class="card-footer-btn-group">
-      <%= link_to "Revert this change", revert_audit_log_path(@log), data: { turbo_method: :post, turbo_confirm: 'Are you sure?' }, class: "btn" %>
-      <%= link_to "Destroy this log", audit_log_path(@log), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn" %>
+      <%= link_to "Revert this change", revert_audit_log_path(@log), data: { turbo_method: :post, turbo_confirm: "Are you sure?" }, class: "btn" %>
+      <%= link_to "Destroy this log", audit_log_path(@log), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn" %>
       <%= link_to "Back to audit log", audit_log_index_path, class: "btn" %>
     </div>
   </div>
 </div>
-
-<% if current_user %>
-<% end %>
-
 
 <% if @log.item_type == "Page" && @log_hash.has_key?("html_cache") %>
   <div class="row mt-2">
@@ -95,7 +91,7 @@
 </div>
 
 <% if current_user %>
-  <%= link_to "Revert this change", revert_audit_log_path(@log), data: { turbo_method: :post, turbo_confirm: 'Are you sure?' }, class: "btn btn-cardlike w-100" %>
-  <%= link_to "Destroy this log", audit_log_path(@log), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-cardlike w-100" %>
+  <%= link_to "Revert this change", revert_audit_log_path(@log), data: { turbo_method: :post, turbo_confirm: "Are you sure?" }, class: "btn btn-cardlike w-100" %>
+  <%= link_to "Destroy this log", audit_log_path(@log), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-cardlike w-100" %>
   <%= link_to "Back to audit log", audit_log_index_path, class: "btn btn-cardlike w-100" %>
 <% end %>
