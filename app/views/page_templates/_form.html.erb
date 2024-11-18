@@ -3,7 +3,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="card">
-    <%= f.input :name, label: false, wrapper: false, placeholder: "Template Name", input_html: {class: "card-header fs-1 m-0 border-0 border-bottom text-center"} %>
+    <%= f.input :name, label: false, wrapper: false, placeholder: "Template Name", input_html: { class: "card-header fs-1 m-0 border-0 border-bottom text-center" } %>
     <div class="card-body">
       <%= f.hidden_field :template, id: "content_hidden" %>
       <%= f.label "Template Content", class: "form-label optional" %>
