@@ -18,7 +18,7 @@ module Frc461Website2024
     config.autoload_lib(ignore: %w[assets tasks])
     config.active_record.yaml_column_permitted_classes = [ Symbol, Date, Time, ActiveSupport::TimeWithZone, ActiveSupport::TimeZone ]
 
-    config.time_zone = 'Eastern Time (US & Canada)'
+    config.time_zone = "Eastern Time (US & Canada)"
 
     # Configuration for the application, engines, and railties goes here.
     #
