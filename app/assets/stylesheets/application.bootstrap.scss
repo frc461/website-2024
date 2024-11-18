@@ -101,7 +101,7 @@ main {
   @extend .btn-cardlike;
   border-width: 0;
   border-radius: 0;
-  margin-bottom: 0!important;
+  margin-bottom: 0 !important;
 }
 
 .card-footer-btn-group > :not(.btn:first-child) {

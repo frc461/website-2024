@@ -12,11 +12,11 @@ class ApplicationController < ActionController::Base
   end
 
   def check_for_user
-    redirect_to root_path, notice: 'You must be logged in to do that' unless current_user
+    redirect_to root_path, notice: "You must be logged in to do that" unless current_user
   end
 
   def check_for_admin
-    redirect_to root_path, notice: 'You are not allowed to do that' unless admin?
+    redirect_to root_path, notice: "You are not allowed to do that" unless admin?
   end
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized

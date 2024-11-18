@@ -5,7 +5,7 @@ module ApplicationHelper
     unless json_data
     end
     content = JSON.parse json_data
-    html = content['blocks'].map do |block|
+    html = content["blocks"].map do |block|
       block_as_html block
     end
     html.join.html_safe

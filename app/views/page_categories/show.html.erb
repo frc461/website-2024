@@ -15,7 +15,7 @@
   <% @page_category.pages.each do |page| %>
     <div class="col-md-4 mb-3">
       <%= render page do %>
-        <%= link_to 'Show this page', page_page_category_path(@page_category.slug, page.slug), class: 'btn' %>
+        <%= link_to "Show this page", page_page_category_path(@page_category.slug, page.slug), class: "btn" %>
       <% end %>
     </div>
   <% end %>
@@ -23,5 +23,5 @@
 
 <% if current_user %>
   <%= link_to "Edit page category", edit_page_category_path(@page_category), class: "btn btn-cardlike w-100" %>
-  <%= link_to "Back to page categories", page_categories_path, class: "btn btn-cardlike w-100 my-2" %>
+  <%= link_to "Back to page categories", page_categories_path, class: "btn btn-cardlike w-100" %>
 <% end %>

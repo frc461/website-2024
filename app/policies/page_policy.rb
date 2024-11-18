@@ -11,7 +11,7 @@ class PagePolicy < ApplicationPolicy
       if user
         scope.all
       else
-        scope.where(draft: [nil, false])
+        scope.where(draft: [ nil, false ])
       end
     end
   end
