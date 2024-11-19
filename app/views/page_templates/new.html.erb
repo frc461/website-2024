@@ -1,0 +1,13 @@
+<%= content_for :title do %>
+  New Page Template
+<% end %>
+
+<div class="card">
+  <div class="card-body">
+    <h1 class="text-center">New page template</h1>
+  </div>
+</div>
+
+<%= render "form", page_template: @page_template do %>
+  <%= link_to "Discard changes", page_templates_path, data: { turbo_method: :get, turbo_confirm: "Are you sure?" }, class: "btn" %>
+<% end %>

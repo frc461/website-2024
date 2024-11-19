@@ -1,0 +1,22 @@
+<%= content_for :title do %>
+  All Page Templates
+<% end %>
+
+<div class="card">
+  <div class="card-body">
+    <h1 class="text-center">Page Templates</h1>
+  </div>
+</div>
+
+<div class="row">
+  <% @page_templates.each do |template| %>
+    <div class="col-md-4 mb-3">
+      <%= render template %>
+    </div>
+  <% end %>
+</div>
+
+<% if current_user %>
+  <%= link_to "New page template", new_page_template_path, class: "btn btn-cardlike w-100" %>
+  <%= link_to "Back to Dashboard", settings_dashboard_index_path, class: "btn btn-cardlike w-100" %>
+<% end %>
