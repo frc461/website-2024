@@ -1,6 +1,6 @@
 <div class="card h-100">
   <div class="card-header">
-    <%= version.created_at %>
+    <%= time_ago_in_words(version.created_at.to_time, include_seconds: true) %> ago
   </div>
   <div class="card-body d-flex flex-column">
     <div>
