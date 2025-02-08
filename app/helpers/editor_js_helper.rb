@@ -109,7 +109,9 @@ module EditorJsHelper
   def embed_html(data)
     <<-HTML
     <figure>
-      <iframe src="#{data['embed']}" width="580" height="320" frameborder="0" allowfullscreen></iframe>
+      <div class="ratio ratio-16x9">
+        <iframe src="#{data['embed']}" width="580" height="320" frameborder="0" allowfullscreen></iframe>
+      </div>
       <figcaption class="figure-caption">#{data['caption']}</figcaption>
     </figure>
     HTML
