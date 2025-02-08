@@ -21,6 +21,8 @@ module EditorJsHelper
       image_html data
     when "card"
       card_html data
+    when "embed"
+      embed_html data
     else
       ""
     end
@@ -102,5 +104,14 @@ module EditorJsHelper
     else
       align
     end
+  end
+
+  def embed_html(data)
+    <<-HTML
+    <figure>
+      <iframe src="#{data['embed']}" width="580" height="320" frameborder="0" allowfullscreen></iframe>
+      <figcaption class="figure-caption">#{data['caption']}</figcaption>
+    </figure>
+    HTML
   end
 end

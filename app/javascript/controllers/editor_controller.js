@@ -9,6 +9,7 @@ import Table from "@editorjs/table"
 import Underline from "@editorjs/underline"
 import ImageTool from "@editorjs/image"
 import Alert from "editorjs-alert"
+import Embed from "@editorjs/embed"
 
 import { Card } from "card"
 
@@ -57,6 +58,14 @@ export default class extends Controller {
             "X-CSRF-Token": this.getCSRFToken()
           }
         }
+      },
+      embed: {
+        class: Embed,
+        //config: {
+        //  services: {
+        //    youtube: true
+        //  }
+        //}
       }
     };
 

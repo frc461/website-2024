@@ -19,3 +19,4 @@ pin "@editorjs/table", to: "@editorjs--table.js" # @2.4.1
 pin "@editorjs/underline", to: "@editorjs--underline.js" # @1.1.0
 pin "@editorjs/nested-list", to: "@editorjs--nested-list.js" # @1.4.3
 pin "editorjs-alert" # @1.1.4
+pin "@editorjs/embed", to: "@editorjs--embed.js" # @2.7.6
