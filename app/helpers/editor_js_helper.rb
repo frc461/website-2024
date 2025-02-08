@@ -110,7 +110,7 @@ module EditorJsHelper
     <<-HTML
     <figure>
       <div class="ratio ratio-16x9">
-        <iframe src="#{data['embed']}" width="580" height="320" frameborder="0" allowfullscreen></iframe>
+        <iframe src="#{data['embed']}" frameborder="0" allowfullscreen></iframe>
       </div>
       <figcaption class="figure-caption">#{data['caption']}</figcaption>
     </figure>
